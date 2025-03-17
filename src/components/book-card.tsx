@@ -24,16 +24,16 @@ const typeColors = {
 export function BookCard({ book, onClick }: BookCardProps) {
     return (
         <div
-            className='group relative bg-card hover:shadow-md border rounded-lg overflow-hidden transition-all cursor-pointer'
+            className='group relative bg-card hover:shadow-md border rounded-lg overflow-hidden hover:scale-102 transition-transform cursor-pointer'
             onClick={onClick}
         >
-            <div className='bg-muted/50 p-2 aspect-[3/4] overflow-hidden'>
+            <div className='bg-muted/50 aspect-square overflow-hidden'>
                 <Image
                     src={book.image || '/static/images/placeholder.svg?height=300&width=200'}
                     alt={book.title}
                     width={200}
-                    height={300}
-                    className='w-full h-full object-contain group-hover:scale-105 transition-transform'
+                    height={200}
+                    className='w-full h-full object-contain'
                 />
             </div>
             <div className='p-2'>

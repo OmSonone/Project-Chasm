@@ -1,7 +1,6 @@
 import type { LucideIcon } from 'lucide-react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
-import { DepressibleCard } from './depressible-card'
 
 interface CategoryCardProps {
     title: string
@@ -21,7 +20,7 @@ export function CategoryCard({
     textColor,
 }: CategoryCardProps) {
     return (
-        <DepressibleCard className="bg-card shadow-xs hover:shadow-md p-6 border rounded-lg transition-colors cursor-pointer">
+        <div className="bg-card shadow-xs hover:shadow-md p-6 border rounded-lg hover:scale-102 transition-all cursor-pointer">
             <Link
                 href={href}
                 className='block w-full h-full'
@@ -37,6 +36,6 @@ export function CategoryCard({
                 <h3 className='mb-2 font-semibold text-xl'>{title}</h3>
                 <p className='text-muted-foreground text-sm'>{description}</p>
             </Link>
-        </DepressibleCard>
+        </div>
     )
 }

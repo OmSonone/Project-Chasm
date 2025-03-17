@@ -20,10 +20,10 @@ interface ArtifactCardProps {
 export function ArtifactCard({ artifact, onClick }: ArtifactCardProps) {
     return (
         <div
-            className='group relative bg-card hover:shadow-md border rounded-lg overflow-hidden transition-all cursor-pointer'
+            className='group relative bg-card hover:shadow-md border rounded-lg overflow-hidden hover:scale-102 transition-transform cursor-pointer'
             onClick={onClick}
         >
-            <div className='bg-muted/50 p-2 aspect-square overflow-hidden'>
+            <div className='bg-muted/50 aspect-square overflow-hidden'>
                 <Image
                     src={
                         artifact.image ||
@@ -32,7 +32,7 @@ export function ArtifactCard({ artifact, onClick }: ArtifactCardProps) {
                     alt={artifact.name}
                     width={200}
                     height={200}
-                    className='w-full h-full object-contain group-hover:scale-105 transition-transform'
+                    className='w-full h-full object-contain'
                 />
                 <div className='top-2 right-2 absolute bg-black/60 px-1.5 py-0.5 rounded-full font-medium text-white text-xs'>
                     {'★'.repeat(artifact.rarity)}

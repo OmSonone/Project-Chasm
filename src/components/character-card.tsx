@@ -26,7 +26,7 @@ const elementColors = {
 
 export function CharacterCard({ character }: CharacterCardProps) {
     return (
-        <div className='group relative bg-card hover:shadow-md border rounded-lg overflow-hidden transition-all'>
+        <div className='group relative bg-card hover:shadow-md border rounded-lg overflow-hidden hover:scale-102 transition-transform cursor-pointer'>
             <div className='aspect-square overflow-hidden'>
                 <Image
                     src={
@@ -36,7 +36,7 @@ export function CharacterCard({ character }: CharacterCardProps) {
                     alt={character.name}
                     width={200}
                     height={200}
-                    className='w-full h-full object-cover group-hover:scale-105 transition-transform'
+                    className='w-full h-full object-cover'
                 />
                 <div className='top-2 right-2 absolute bg-black/60 px-1.5 py-0.5 rounded-full font-medium text-white text-xs'>
                     {'★'.repeat(character.rarity)}

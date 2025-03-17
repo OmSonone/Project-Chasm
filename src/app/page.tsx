@@ -22,7 +22,7 @@ export default function LandingPage() {
                     </p>
                 </div>
                 <div className='flex justify-center md:justify-end'>
-                    <Link href='/home' >
+                    <Link href='/home'>
                         <Button
                             size='lg'
                             className='bg-black hover:bg-black/80 dark:hover:bg-white/80 dark:bg-white px-8 h-14 text-white dark:text-black text-lg transition-colors cursor-pointer'

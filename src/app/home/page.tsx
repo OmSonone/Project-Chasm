@@ -1,5 +1,6 @@
 import { CategoryCard } from '@/components/category-card'
-import { BookOpen, User, Bookmark, Package, Sparkles } from 'lucide-react'
+import { DepressibleCard } from '@/components/depressible-card'
+import { BookOpen, User, Package, Sparkles } from 'lucide-react'
 
 export default function Dashboard() {
     const categories = [
@@ -7,7 +8,7 @@ export default function Dashboard() {
             title: 'Characters',
             description: 'Explore the heroes and villains of Teyvat',
             icon: User,
-            href: '/dashboard/characters',
+            href: '/home/characters',
             color: 'bg-blue-500/10 dark:bg-blue-500/20',
             textColor: 'text-blue-500 dark:text-blue-400',
         },
@@ -15,7 +16,7 @@ export default function Dashboard() {
             title: 'Books',
             description: 'Discover the written lore with audiobook versions',
             icon: BookOpen,
-            href: '/dashboard/books',
+            href: '/home/books',
             color: 'bg-amber-500/10 dark:bg-amber-500/20',
             textColor: 'text-amber-500 dark:text-amber-400',
         },
@@ -23,7 +24,7 @@ export default function Dashboard() {
             title: 'Artifacts',
             description: 'Learn about the powerful relics and their stories',
             icon: Sparkles,
-            href: '/dashboard/artifacts',
+            href: '/home/artifacts',
             color: 'bg-purple-500/10 dark:bg-purple-500/20',
             textColor: 'text-purple-500 dark:text-purple-400',
         },
@@ -31,17 +32,9 @@ export default function Dashboard() {
             title: 'Items',
             description: 'Catalog of materials and items found in Teyvat',
             icon: Package,
-            href: '/dashboard/items',
+            href: '/home/items',
             color: 'bg-green-500/10 dark:bg-green-500/20',
             textColor: 'text-green-500 dark:text-green-400',
-        },
-        {
-            title: 'Quests',
-            description: 'Journey through the main storylines and world quests',
-            icon: Bookmark,
-            href: '/dashboard/quests',
-            color: 'bg-red-500/10 dark:bg-red-500/20',
-            textColor: 'text-red-500 dark:text-red-400',
         },
     ]
 
@@ -71,7 +64,7 @@ export default function Dashboard() {
                 </h2>
                 <div className='gap-6 grid sm:grid-cols-2 lg:grid-cols-3'>
                     {[1, 2, 3].map((i) => (
-                        <div
+                        <DepressibleCard
                             key={i}
                             className='bg-card shadow-xs hover:shadow-md p-4 border rounded-lg transition-all'
                         >
@@ -91,7 +84,7 @@ export default function Dashboard() {
                                     12:34
                                 </span>
                             </div>
-                        </div>
+                        </DepressibleCard>
                     ))}
                 </div>
             </section>
@@ -101,7 +94,7 @@ export default function Dashboard() {
                 </h2>
                 <div className='gap-6 grid sm:grid-cols-2 lg:grid-cols-4'>
                     {[1, 2, 3, 4].map((i) => (
-                        <div
+                        <DepressibleCard
                             key={i}
                             className='bg-card shadow-xs hover:shadow-md p-4 border rounded-lg transition-all'
                         >
@@ -110,7 +103,7 @@ export default function Dashboard() {
                             <p className='text-muted-foreground text-sm'>
                                 Category
                             </p>
-                        </div>
+                        </DepressibleCard>
                     ))}
                 </div>
             </section>

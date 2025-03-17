@@ -1,5 +1,4 @@
 import { CategoryCard } from '@/components/category-card'
-import { DepressibleCard } from '@/components/depressible-card'
 import { BookOpen, User, Package, Sparkles } from 'lucide-react'
 
 export default function Dashboard() {
@@ -64,7 +63,7 @@ export default function Dashboard() {
                 </h2>
                 <div className='gap-6 grid sm:grid-cols-2 lg:grid-cols-3'>
                     {[1, 2, 3].map((i) => (
-                        <DepressibleCard
+                        <div
                             key={i}
                             className='bg-card shadow-xs hover:shadow-md p-4 border rounded-lg transition-all'
                         >
@@ -84,7 +83,7 @@ export default function Dashboard() {
                                     12:34
                                 </span>
                             </div>
-                        </DepressibleCard>
+                        </div>
                     ))}
                 </div>
             </section>
@@ -94,7 +93,7 @@ export default function Dashboard() {
                 </h2>
                 <div className='gap-6 grid sm:grid-cols-2 lg:grid-cols-4'>
                     {[1, 2, 3, 4].map((i) => (
-                        <DepressibleCard
+                        <div
                             key={i}
                             className='bg-card shadow-xs hover:shadow-md p-4 border rounded-lg transition-all'
                         >
@@ -103,7 +102,7 @@ export default function Dashboard() {
                             <p className='text-muted-foreground text-sm'>
                                 Category
                             </p>
-                        </DepressibleCard>
+                        </div>
                     ))}
                 </div>
             </section>

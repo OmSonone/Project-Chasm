@@ -1,0 +1,88 @@
+import { Item } from '@/components/item-card'
+
+export const items: Item[] = [
+    {
+        id: 'noctilucous-jade',
+        name: 'Noctilucous Jade',
+        type: 'material',
+        rarity: 3,
+        image: '/static/images/placeholder.svg?height=200&width=200',
+    },
+    {
+        id: 'cor-lapis',
+        name: 'Cor Lapis',
+        type: 'material',
+        rarity: 3,
+        image: '/static/images/placeholder.svg?height=200&width=200',
+    },
+    {
+        id: 'crystal-core',
+        name: 'Crystal Core',
+        type: 'material',
+        rarity: 2,
+        image: '/static/images/placeholder.svg?height=200&width=200',
+    },
+    {
+        id: 'silk-flower',
+        name: 'Silk Flower',
+        type: 'material',
+        rarity: 1,
+        image: '/static/images/placeholder.svg?height=200&width=200',
+    },
+    {
+        id: 'sweet-madame',
+        name: 'Sweet Madame',
+        type: 'food',
+        rarity: 2,
+        image: '/static/images/placeholder.svg?height=200&width=200',
+    },
+    {
+        id: 'adeptus-temptation',
+        name: "Adeptus' Temptation",
+        type: 'food',
+        rarity: 4,
+        image: '/static/images/placeholder.svg?height=200&width=200',
+    },
+    {
+        id: 'mondstadt-hash-brown',
+        name: 'Mondstadt Hash Brown',
+        type: 'food',
+        rarity: 3,
+        image: '/static/images/placeholder.svg?height=200&width=200',
+    },
+    {
+        id: 'nre',
+        name: 'NRE (Menu 30)',
+        type: 'gadget',
+        rarity: 4,
+        image: '/static/images/placeholder.svg?height=200&width=200',
+    },
+    {
+        id: 'parametric-transformer',
+        name: 'Parametric Transformer',
+        type: 'gadget',
+        rarity: 4,
+        image: '/static/images/placeholder.svg?height=200&width=200',
+    },
+    {
+        id: 'wind-catcher',
+        name: 'Wind Catcher',
+        type: 'gadget',
+        rarity: 4,
+        image: '/static/images/placeholder.svg?height=200&width=200',
+    },
+    {
+        id: 'unusual-hilichurl-mask',
+        name: 'Unusual Hilichurl Mask',
+        type: 'quest',
+        rarity: 3,
+        image: '/static/images/placeholder.svg?height=200&width=200',
+    },
+    {
+        id: 'festering-desire',
+        name: 'Festering Desire',
+        type: 'quest',
+        rarity: 4,
+        image: '/static/images/placeholder.svg?height=200&width=200',
+    },
+]

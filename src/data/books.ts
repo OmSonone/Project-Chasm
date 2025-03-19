@@ -1,4 +1,4 @@
-import { Book } from '@/components/book-card'
+import { Book } from '@/components/book-audiobook/book-card'
 
 export const books: Book[] = [
     {

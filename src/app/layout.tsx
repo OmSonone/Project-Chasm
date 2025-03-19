@@ -1,7 +1,7 @@
 import type React from 'react'
 import '@/app/globals.css'
-import { ThemeProvider } from '@/components/theme-provider'
-import { Navigation } from '@/components/navigation'
+import { ThemeProvider } from '@/components/layout/theme-provider'
+import { Navigation } from '@/components/layout/navigation'
 import localFont from 'next/font/local'
 
 const workSans = localFont({

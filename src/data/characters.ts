@@ -1,4 +1,4 @@
-import { Character } from '@/components/character-card'
+import { Character } from '@/components/character/character-card'
 
 export const characters: Character[] = [
     {

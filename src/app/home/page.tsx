@@ -1,4 +1,4 @@
-import { CategoryCard } from '@/components/category-card'
+import { CategoryCard } from '@/components/item-artifact/category-card'
 import { BookOpen, User, Package, Sparkles } from 'lucide-react'
 
 export default function Dashboard() {

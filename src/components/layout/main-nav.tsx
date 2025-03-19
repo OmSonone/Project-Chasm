@@ -1,6 +1,6 @@
 import { BookOpen, User, Package, Sparkles } from 'lucide-react'
 import Link from 'next/link'
-import { ModeToggle } from '@/components/mode-toggle'
+import { ModeToggle } from '@/components/layout/mode-toggle'
 
 const categories = [
     {

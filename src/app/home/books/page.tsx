@@ -4,9 +4,9 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { BookCard } from '@/components/book-card'
+import { BookCard } from '@/components/book-audiobook/book-card'
 import { books } from '@/data/books'
-import { AudiobookModal } from '@/components/audiobook-modal'
+import { AudiobookModal } from '@/components/book-audiobook/audiobook-modal'
 
 export default function BooksPage() {
     const router = useRouter()

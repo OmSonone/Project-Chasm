@@ -10,7 +10,7 @@ import {
     AccordionTrigger,
 } from '@/components/ui/accordion'
 import { books } from '@/data/books'
-import { AudiobookPlayer } from '@/components/audiobook-player'
+import { AudiobookPlayer } from '@/components/book-audiobook/audiobook-player'
 import { bookVolumes } from '@/data/book-volumes'
 
 export default function BookDetailPage() {

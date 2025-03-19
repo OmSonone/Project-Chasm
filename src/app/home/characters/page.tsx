@@ -1,5 +1,5 @@
-import { CharacterFilterWrapper } from '@/components/character-filter-wrapper'
-import { CharacterGrid } from '@/components/character-grid'
+import { CharacterFilterWrapper } from '@/components/character/character-filter-wrapper'
+import { CharacterGrid } from '@/components/character/character-grid'
 
 export default function CharactersPage() {
     return (

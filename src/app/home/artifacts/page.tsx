@@ -4,7 +4,7 @@ import { useState } from 'react'
 // import { ChevronDown, Grid, List } from 'lucide-react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { ArtifactCard } from '@/components/artifact-card'
+import { ArtifactCard } from '@/components/item-artifact/artifact-card'
 import { artifacts, artifactSets } from '@/data/artifacts'
 
 type ArtifactType = 'flower' | 'plume' | 'sands' | 'goblet' | 'circlet'

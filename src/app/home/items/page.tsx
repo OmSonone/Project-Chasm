@@ -1,7 +1,7 @@
 // import { ChevronDown, Grid, List } from 'lucide-react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { ItemCard } from '@/components/item-card'
+import { ItemCard } from '@/components/item-artifact/item-card'
 import { items } from '@/data/items'
 
 export default function ItemsPage() {

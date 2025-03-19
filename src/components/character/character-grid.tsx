@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { CharacterCard } from '@/components/character-card'
+import { CharacterCard } from '@/components/character/character-card'
 import { characters } from '@/data/characters'
 
 export function CharacterGrid() {

@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/accordion'
 import { characters } from '@/data/characters'
 import { characterStories } from '@/data/character-stories'
-import { CharacterStoryPlayer } from '@/components/character-story-player'
+import { CharacterStoryPlayer } from '@/components/character/character-story-player'
 
 export default function CharacterDetailPage() {
     const router = useRouter()

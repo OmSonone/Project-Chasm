@@ -1,5 +1,7 @@
 'use client'
 
+import type React from 'react'
+
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
 
@@ -9,6 +11,7 @@ export interface Book {
     type: 'lore' | 'quest'
     volume?: string
     image: string
+    description?: string
 }
 
 interface BookCardProps {
@@ -22,18 +25,35 @@ const typeColors = {
 }
 
 export function BookCard({ book, onClick }: BookCardProps) {
+
+    const handleClick = () => {
+        if (onClick) {
+            onClick()
+        }
+    }
+
+    const handleKeyDown = (e: React.KeyboardEvent) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            handleClick()
+        }
+    }
+
     return (
         <div
-            className='group relative bg-card hover:shadow-md border rounded-lg overflow-hidden hover:scale-102 transition-transform cursor-pointer'
-            onClick={onClick}
+            className='group relative bg-card hover:shadow-md border rounded-lg overflow-hidden transition-all cursor-pointer'
+            onClick={handleClick}
+            onKeyDown={handleKeyDown}
+            tabIndex={0}
+            role='button'
+            aria-label={`Select ${book.title}`}
         >
-            <div className='bg-muted/50 aspect-square overflow-hidden'>
+            <div className='bg-muted/50 p-2 aspect-[3/4] overflow-hidden'>
                 <Image
                     src={book.image || '/static/images/placeholder.svg?height=300&width=200'}
                     alt={book.title}
                     width={200}
-                    height={200}
-                    className='w-full h-full object-contain'
+                    height={300}
+                    className='w-full h-full object-contain group-hover:scale-105 transition-transform'
                 />
             </div>
             <div className='p-2'>

@@ -201,11 +201,35 @@ export type GET_ALL_ELEMENTSResult = Array<{
     _type: "image";
   };
 }>;
+// Variable: GET_ALL_WEAPON_TYPES
+// Query: *[_type == "weaponType"] | order(name asc)
+export type GET_ALL_WEAPON_TYPESResult = Array<{
+  _id: string;
+  _type: "weaponType";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  id?: string;
+  name?: string;
+  image?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
+}>;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
     "*[_type == \"elements\"] | order(name asc)": GET_ALL_ELEMENTSResult;
+    "*[_type == \"weaponType\"] | order(name asc)": GET_ALL_WEAPON_TYPESResult;
   }
 }

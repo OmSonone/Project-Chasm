@@ -1,7 +1,7 @@
 import type React from 'react'
 import '@/app/globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
-// import { ModeToggle } from '@/components/mode-toggle'
+import { Navigation } from '@/components/navigation'
 import localFont from 'next/font/local'
 
 const workSans = localFont({
@@ -63,21 +63,19 @@ export default function RootLayout({
 }) {
     return (
         <html lang='en' suppressHydrationWarning>
-            <body className={workSans.variable}>
+            <body className={`${workSans.variable} flex flex-col min-h-screen`}>
                 <ThemeProvider
                     attribute='class'
                     defaultTheme='dark'
                     enableSystem
                     disableTransitionOnChange
                 >
-                    {/* <div className='flex flex-col justify-center item-center'>
-                        <header className='top-0 z-10 sticky bg-background/80 backdrop-blur-sm border-b'>
-                            <div className='flex flex-row justify-end items-center h-16 container'>
-                                <ModeToggle />
-                            </div>
-                        </header> */}
-                    {children}
-                    {/* </div> */}
+                    <div className="flex flex-col min-h-screen">
+                        <Navigation />
+                        <main className="flex-1 w-full">
+                            {children}
+                        </main>
+                    </div>
                 </ThemeProvider>
             </body>
         </html>

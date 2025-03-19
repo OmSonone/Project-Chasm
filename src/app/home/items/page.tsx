@@ -7,33 +7,9 @@ import { items } from '@/data/items'
 export default function ItemsPage() {
     return (
         <div className='min-h-screen gradient-container'>
-            <header className='top-0 z-10 sticky bg-background/80 backdrop-blur'>
+            <header className='top-0 z-10 pt-6'>
                 <div className='flex justify-between items-center h-16 container'>
-                    <h1 className='font-bold text-2xl tracking-tight'>Items</h1>
-                    {/* <div className='flex items-center gap-4'>
-                        <Button variant='outline' size='sm' className='gap-2'>
-                            <span>Sort by</span>
-                            <ChevronDown className='w-4 h-4' />
-                        </Button>
-                        <div className='flex border rounded-md'>
-                            <Button
-                                variant='ghost'
-                                size='icon'
-                                className='rounded-none rounded-l-md'
-                            >
-                                <Grid className='w-4 h-4' />
-                                <span className='sr-only'>Grid view</span>
-                            </Button>
-                            <Button
-                                variant='ghost'
-                                size='icon'
-                                className='rounded-none rounded-r-md'
-                            >
-                                <List className='w-4 h-4' />
-                                <span className='sr-only'>List view</span>
-                            </Button>
-                        </div>
-                    </div> */}
+                    <h1 className='font-bold text-4xl tracking-tight'>Items</h1>
                 </div>
             </header>
 

@@ -1,4 +1,7 @@
-// import { ChevronDown, Grid, List } from 'lucide-react'
+'use client'
+
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { BookCard } from '@/components/book-card'
@@ -6,35 +9,14 @@ import { books } from '@/data/books'
 import { AudiobookModal } from '@/components/audiobook-modal'
 
 export default function BooksPage() {
+    const router = useRouter()
+    const [selectedBook, setSelectedBook] = useState(books[0])
+
     return (
         <div className='min-h-screen gradient-container'>
-            <header className='top-0 z-10 sticky bg-background/80 backdrop-blur'>
+            <header className='top-0 z-10 pt-6'>
                 <div className='flex justify-between items-center h-16 container'>
-                    <h1 className='font-bold text-2xl tracking-tight'>Books</h1>
-                    {/* <div className='flex items-center gap-4'>
-                        <Button variant='outline' size='sm' className='gap-2'>
-                            <span>Sort by</span>
-                            <ChevronDown className='w-4 h-4' />
-                        </Button>
-                        <div className='flex border rounded-md'>
-                            <Button
-                                variant='ghost'
-                                size='icon'
-                                className='rounded-none rounded-l-md'
-                            >
-                                <Grid className='w-4 h-4' />
-                                <span className='sr-only'>Grid view</span>
-                            </Button>
-                            <Button
-                                variant='ghost'
-                                size='icon'
-                                className='rounded-none rounded-r-md'
-                            >
-                                <List className='w-4 h-4' />
-                                <span className='sr-only'>List view</span>
-                            </Button>
-                        </div>
-                    </div> */}
+                    <h1 className='font-bold text-4xl tracking-tight'>Books</h1>
                 </div>
             </header>
 
@@ -53,12 +35,14 @@ export default function BooksPage() {
 
                 <div className='flex lg:flex-row flex-col lg:gap-8 mt-6'>
                     {/* Left side - Book Display */}
-                    <div className='sticky lg:w-1/2 xl:w-2/5'>
+                    <div className='hidden lg:block top-24 sticky lg:w-1/2 xl:w-2/5'>
                         <div className='bg-card p-6 rounded-xl aspect-square overflow-hidden'>
                             <div className='relative w-full h-full'>
                                 <Image
-                                    src='/static/images/placeholder.svg?height=600&width=400'
-                                    alt='Selected book cover'
+                                    src={
+                                        selectedBook.image || '/placeholder.svg'
+                                    }
+                                    alt={selectedBook.title}
                                     width={400}
                                     height={600}
                                     className='mx-auto h-full object-contain'
@@ -67,23 +51,37 @@ export default function BooksPage() {
                         </div>
                         <div className='bg-card mt-4 p-4 border rounded-lg'>
                             <h2 className='mb-2 font-bold text-2xl'>
-                                The Pale Princess and the Six Pygmies
+                                {selectedBook.title}
                             </h2>
                             <div className='flex items-center gap-2 mb-4'>
                                 <span className='bg-amber-500/20 px-2 py-0.5 rounded-full font-medium text-amber-500 text-xs'>
-                                    Lore
+                                    {selectedBook.type.charAt(0).toUpperCase() +
+                                        selectedBook.type.slice(1)}
                                 </span>
-                                <span className='text-muted-foreground text-sm'>
-                                    Volume 1
-                                </span>
+                                {selectedBook.volume && (
+                                    <span className='text-muted-foreground text-sm'>
+                                        {selectedBook.volume}
+                                    </span>
+                                )}
                             </div>
                             <p className='text-muted-foreground text-sm'>
                                 Once, there was a glorious kingdom established
                                 among the snowy peaks. In it lived the princess,
                                 the pale princess...
                             </p>
-                            <div className='mt-4'>
+                            <div className='flex justify-between gap-2 mt-4'>
                                 <AudiobookModal />
+                                <Button
+                                    variant='outline'
+                                    className='flex-1 bg-black hover:bg-black/80 dark:bg-white dark:hover:bg-white/80 text-white hover:text-white dark:hover:text-black dark:text-black cursor-pointer'
+                                    onClick={() =>
+                                        router.push(
+                                            `/home/books/${selectedBook.id.split('-')[0]}`
+                                        )
+                                    }
+                                >
+                                    View All Volumes
+                                </Button>
                             </div>
                         </div>
                     </div>
@@ -92,7 +90,11 @@ export default function BooksPage() {
                     <div className='lg:w-1/2 xl:w-3/5'>
                         <div className='gap-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4'>
                             {books.map((book) => (
-                                <BookCard key={book.id} book={book} />
+                                <BookCard
+                                    key={book.id}
+                                    book={book}
+                                    onClick={() => setSelectedBook(book)}
+                                />
                             ))}
                         </div>
                     </div>

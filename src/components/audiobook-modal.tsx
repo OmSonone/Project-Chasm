@@ -21,7 +21,9 @@ export function AudiobookModal() {
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>
-                <Button className='w-full'>Listen to Audiobook</Button>
+                <Button className='flex-1 cursor-pointer'>
+                    Listen to Audiobook
+                </Button>
             </DialogTrigger>
             <DialogContent className='sm:max-w-[500px]'>
                 <DialogHeader>

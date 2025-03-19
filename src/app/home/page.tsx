@@ -38,7 +38,7 @@ export default function Dashboard() {
     ]
 
     return (
-        <main className='py-8 container'>
+        <div className='py-8 container'>
             <section className='mb-8'>
                 <h2 className='mb-6 font-bold text-3xl tracking-tight'>
                     {"Explore Teyvat's Lore"}
@@ -106,6 +106,6 @@ export default function Dashboard() {
                     ))}
                 </div>
             </section>
-        </main>
+        </div>
     )
 }

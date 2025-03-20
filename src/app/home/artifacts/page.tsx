@@ -13,7 +13,7 @@ export default function ArtifactsPage() {
     const [selectedSet, setSelectedSet] = useState(artifactSets[0])
     const [selectedType, setSelectedType] = useState<ArtifactType>('flower')
 
-    // Get the selected artifact piece
+    // Get the selected artifact pieces
     const selectedArtifact = artifacts.find(
         (artifact) =>
             artifact.set === selectedSet.name && artifact.type === selectedType

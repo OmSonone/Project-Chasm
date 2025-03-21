@@ -1,25 +1,18 @@
-import { NextResponse } from 'next/server'
-import { NextRequest } from 'next/server'
-import { get } from '@vercel/edge-config'
+import { NextResponse } from 'next/server';
+import { NextRequest } from 'next/server';
+import { get } from '@vercel/edge-config';
 
-export const config = {
-  matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     */
-    '/((?!api|_next/static|_next/image|favicon.ico).*)'
-  ]
-}
-
+const MAINTENANCE_MODE_KEY = 'maintenance';
 export async function middleware(request: NextRequest) {
-  const isInMaintenanceMode = await get('maintenance')
-
-  if (isInMaintenanceMode) {
-    request.nextUrl.pathname = `/maintenance`
-    return NextResponse.rewrite(request.nextUrl)
+  try {
+    const isInMaintenanceMode: boolean | null | undefined =
+      await get(MAINTENANCE_MODE_KEY);
+    if (isInMaintenanceMode === true) {
+      request.nextUrl.pathname = `/maintenance`;
+      return NextResponse.rewrite(request.nextUrl);
+    }
+  } catch (error) {
+    console.error('Error checking maintenance mode:', error);
+    return NextResponse.next();
   }
 }

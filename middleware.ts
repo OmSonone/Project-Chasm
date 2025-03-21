@@ -7,6 +7,7 @@ export async function middleware(request: NextRequest) {
   try {
     const isInMaintenanceMode: boolean | null | undefined =
       await get(MAINTENANCE_MODE_KEY);
+    console.log(isInMaintenanceMode, 'logging maintenance value');
     if (isInMaintenanceMode === true) {
       request.nextUrl.pathname = `/maintenance`;
       return NextResponse.rewrite(request.nextUrl);

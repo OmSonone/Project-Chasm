@@ -40,20 +40,20 @@ export function BookCard({ book, onClick }: BookCardProps) {
 
     return (
         <div
-            className='group relative bg-card hover:shadow-md border rounded-lg overflow-hidden transition-all cursor-pointer'
+            className='group relative bg-card hover:shadow-md border rounded-lg overflow-hidden transition-all cursor-pointer hover:scale-105'
             onClick={handleClick}
             onKeyDown={handleKeyDown}
             tabIndex={0}
             role='button'
             aria-label={`Select ${book.title}`}
         >
-            <div className='bg-muted/50 p-2 aspect-[3/4] overflow-hidden'>
+            <div className='bg-muted/50 aspect-square overflow-hidden'>
                 <Image
                     src={book.image || '/static/images/placeholder.svg?height=300&width=200'}
                     alt={book.title}
                     width={200}
                     height={300}
-                    className='w-full h-full object-contain group-hover:scale-105 transition-transform'
+                    className='w-full h-full object-contain transition-transform'
                 />
             </div>
             <div className='p-2'>

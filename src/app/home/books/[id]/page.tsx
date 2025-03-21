@@ -194,14 +194,14 @@ export default function BookDetailPage() {
                                         .map((relatedBook) => (
                                             <div
                                                 key={relatedBook.id}
-                                                className='group bg-card hover:shadow-md border rounded-lg overflow-hidden transition-all cursor-pointer'
+                                                className='group bg-card hover:shadow-md border rounded-lg overflow-hidden transition-all cursor-pointer hover:scale-105'
                                                 onClick={() =>
                                                     router.push(
                                                         `/home/books/${relatedBook.id.split('-')[0]}`
                                                     )
                                                 }
                                             >
-                                                <div className='bg-muted/50 p-2 aspect-[3/4] overflow-hidden'>
+                                                <div className='bg-muted/50 aspect-square overflow-hidden'>
                                                     <Image
                                                         src={
                                                             relatedBook.image ||

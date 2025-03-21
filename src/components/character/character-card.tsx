@@ -50,7 +50,7 @@ export function CharacterCard({ character, onClick }: CharacterCardProps) {
 
     return (
         <div
-            className='group relative bg-card hover:shadow-md border rounded-lg overflow-hidden transition-all cursor-pointer'
+            className='group relative bg-card hover:shadow-md border rounded-lg overflow-hidden transition-all cursor-pointer hover:scale-105'
             onClick={handleClick}
             onKeyDown={handleKeyDown}
             tabIndex={0}

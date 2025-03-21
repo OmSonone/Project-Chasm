@@ -17,15 +17,18 @@ const nextConfig: NextConfig = {
     eslint: {
         ignoreDuringBuilds: true,
     },
-    async redirects() {
-        return [
-          {
-            source: '/((?!maintenance).*)',
-            destination: '/maintenance',
-            permanent: false
-          }
-        ]
-    }
+
+    /**Uncomment this whenever you want to enable maintainance mode **/
+
+    // async redirects() {
+    //     return [
+    //       {
+    //         source: '/((?!maintenance).*)',
+    //         destination: '/maintenance',
+    //         permanent: false
+    //       }
+    //     ]
+    // }
 }
 
 export default nextConfig

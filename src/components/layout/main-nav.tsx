@@ -4,6 +4,14 @@ import { ModeToggle } from '@/components/layout/mode-toggle'
 
 const categories = [
     {
+        title: 'Home',
+        description: 'Explore the heroes and villains of Teyvat',
+        icon: User,
+        href: '/home',
+        color: 'bg-blue-500/10 dark:bg-blue-500/20',
+        textColor: 'text-blue-500 dark:text-blue-400',
+    },
+    {
         title: 'Characters',
         description: 'Explore the heroes and villains of Teyvat',
         icon: User,

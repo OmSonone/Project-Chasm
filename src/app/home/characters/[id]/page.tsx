@@ -111,7 +111,7 @@ export default function CharacterDetailPage() {
                             onValueChange={setActiveTab}
                             className='w-full'
                         >
-                            <TabsList className='grid grid-cols-3 mb-4 w-full'>
+                            <TabsList className='grid grid-cols-3 mb-4 w-full gap-2'>
                                 <TabsTrigger value='profile'>Profile</TabsTrigger>
                                 <TabsTrigger value='stories'>Stories</TabsTrigger>
                                 <TabsTrigger value='voice'>Voice-Overs</TabsTrigger>

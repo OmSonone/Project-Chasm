@@ -1,4 +1,4 @@
-import type React from 'react';
+import React from 'react';
 import '@/app/globals.css';
 import { ThemeProvider } from '@/components/layout/theme-provider';
 import { Navigation } from '@/components/layout/navigation';
@@ -72,11 +72,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className='flex flex-col min-h-screen'>
-            <Navigation />
-            <div className='flex-1 w-full'>{children}</div>
-            <Footer />
-          </main>
+          <Navigation />
+          <main className='flex flex-col flex-1 min-h-screen'>{children}</main>
+          <Footer />
           <SpeedInsights />
         </ThemeProvider>
       </body>

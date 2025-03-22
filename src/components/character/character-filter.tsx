@@ -29,7 +29,7 @@ export function CharacterFilter({
                   urlFor(element.image).url()
                 : `/static/images/elements/${element.name}.png`
               }
-              alt={element?.image?.alt ?? 'Pyro'}
+              alt={`${element?.image?.alt ?? 'Pyro'} Image`}
               width={20}
               height={20}
             />
@@ -51,7 +51,7 @@ export function CharacterFilter({
                   urlFor(weaponType.image).url()
                 : `/static/images/weapons/${weaponType.name}.png`
               }
-              alt={weaponType?.image?.alt ?? 'Sword'}
+              alt={`${weaponType?.image?.alt ?? 'Sword'} Image`}
               width={20}
               height={20}
             />

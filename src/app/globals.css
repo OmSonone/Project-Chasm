@@ -167,3 +167,7 @@
 @utility gradient-container {
   @apply bg-gradient-to-br from-slate-100 dark:from-slate-900 via-white dark:via-background to-slate-200 dark:to-slate-800;
 }
+
+@utility button-active{
+  @apply ring-2
+}

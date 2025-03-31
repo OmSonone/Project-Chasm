@@ -19,7 +19,7 @@ export const elements = defineType({
       title: 'Image',
       type: 'image',
       options: {
-        hotspot: true, // Enables the hotspot functionality for better image cropping
+        hotspot: true,
       },
       fields: [
         {

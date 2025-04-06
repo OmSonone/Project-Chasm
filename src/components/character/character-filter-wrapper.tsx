@@ -1,5 +1,3 @@
-'use server';
-
 import { GET_ALL_ELEMENTS, GET_ALL_WEAPON_TYPES } from '@/sanity/lib/queries';
 import { client } from '@/sanity/lib/client';
 import { CharacterFilter } from './character-filter';

@@ -1,4 +1,17 @@
-import { Character } from '@/components/character/character-card';
+export interface Character {
+  id: string;
+  name: string;
+  element: string;
+  weapon: string;
+  rarity: number;
+  image: string;
+  title: string;
+  region: string;
+  affiliation: string;
+  constellation: string;
+  description: string;
+  personality: string;
+}
 
 export const characters: Character[] = [
   {
@@ -7,7 +20,7 @@ export const characters: Character[] = [
     element: 'electro',
     weapon: 'polearm',
     rarity: 5,
-    image: '/static/images/placeholder.svg?height=200&width=200',
+    image: '/static/images/placeholder.svg?height=100&width=100',
     title: 'Plane of Euthymia',
     region: 'Inazuma',
     affiliation: 'Inazuma Shogunate',

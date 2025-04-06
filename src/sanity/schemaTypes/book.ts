@@ -1,5 +1,15 @@
 import { defineField, defineType } from 'sanity'
 
+const audioField = {
+  name: 'audio',
+  title: 'Audio Narration',
+  type: 'file',
+  options: {
+    accept: 'audio/*'
+  },
+  description: 'Upload an audio file for narration'
+}
+
 export const book = defineType({
   name: 'book',
   title: 'Book',
@@ -21,6 +31,22 @@ export const book = defineType({
       title: 'Name',
       type: 'string',
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alternative text',
+          description: 'Important for SEO and accessibility.',
+        },
+      ],
     }),
     defineField({
       name: 'volumes',
@@ -70,6 +96,7 @@ export const book = defineType({
               ],
               validation: (Rule) => Rule.required(),
             },
+            audioField
           ],
         },
       ],

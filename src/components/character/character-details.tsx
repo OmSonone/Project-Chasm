@@ -1,36 +1,25 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { urlFor } from '@/sanity/lib/image'
+import { CharacterWithExpandedRefs } from '@/components/character/character-card'
 
-export interface Character {
-  id: string;
-  name: string;
-  element: 'pyro' | 'hydro' | 'anemo' | 'electro' | 'dendro' | 'cryo' | 'geo';
-  weapon: 'sword' | 'claymore' | 'polearm' | 'catalyst' | 'bow';
-  rarity: number;
-  image: string;
-  title?: string;
-  region?: string;
-  affiliation?: string;
-  constellation?: string;
-  description?: string;
-  personality?: string;
-}
+const CharacterDetails = (character: CharacterWithExpandedRefs) => {
 
-const CharacterDetails = (character: Character) => {
   return (
-    <div className='hidden lg:block top-24 sticky lg:w-1/2 xl:w-2/5'>
+    <div className='hidden lg:block top-24 sticky lg:w-2/3 xl:w-2/3'>
       <div className='bg-card rounded-xl aspect-square overflow-hidden'>
         <div className='relative w-full h-full'>
           <Image
             src={
-              character.image ||
-              '/static/images/placeholder.svg?height=800&width=600'
+              character.splash ?
+                urlFor(character.splash).url()
+              : '/static/images/placeholder.svg?height=800&width=600'
             }
             alt='Selected character splash art'
             fill
-            className='object-cover'
+            className='object-contain'
           />
           <div className='bottom-0 absolute bg-gradient-to-t from-black/80 to-transparent p-6 w-full text-white'>
             <h2 className='font-bold text-3xl'>{character.name}</h2>
@@ -53,7 +42,7 @@ const CharacterDetails = (character: Character) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CharacterDetails;
+export default CharacterDetails

@@ -25,9 +25,9 @@ const audioField = {
   title: 'Audio Narration',
   type: 'file',
   options: {
-    accept: 'audio/*'
+    accept: 'audio/*',
   },
-  description: 'Upload an audio file for narration'
+  description: 'Upload an audio file for narration',
 }
 
 export const character = defineType({
@@ -57,6 +57,12 @@ export const character = defineType({
       name: 'name',
       type: 'string',
       title: 'Name',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'description',
+      type: 'string',
+      title: 'Description',
       validation: (Rule) => Rule.required(),
     }),
     defineField({

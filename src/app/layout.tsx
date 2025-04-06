@@ -5,6 +5,7 @@ import { Navigation } from '@/components/layout/navigation';
 import localFont from 'next/font/local';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Footer } from '@/components/layout/site-footer';
+import ChangelogPopup from '@/components/layout/changelog-popup'
 
 const workSans = localFont({
   src: [
@@ -74,6 +75,7 @@ export default function RootLayout({
         >
           <Navigation />
           <main className='flex flex-col flex-1 min-h-screen'>{children}</main>
+          <ChangelogPopup />
           <Footer />
           <SpeedInsights />
         </ThemeProvider>

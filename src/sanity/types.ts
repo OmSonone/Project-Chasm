@@ -82,6 +82,7 @@ export type Weapon = {
       _weak?: boolean;
       [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
     };
+    media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
@@ -152,6 +153,7 @@ export type Book = {
       _weak?: boolean;
       [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
     };
+    media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
@@ -185,6 +187,7 @@ export type Book = {
         _weak?: boolean;
         [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
       };
+      media?: unknown;
       _type: "file";
     };
     _type: "volume";
@@ -230,6 +233,7 @@ export type Artifact = {
         _weak?: boolean;
         [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
       };
+      media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;
@@ -263,6 +267,7 @@ export type Artifact = {
         _weak?: boolean;
         [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
       };
+      media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;
@@ -296,6 +301,7 @@ export type Artifact = {
         _weak?: boolean;
         [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
       };
+      media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;
@@ -329,6 +335,7 @@ export type Artifact = {
         _weak?: boolean;
         [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
       };
+      media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;
@@ -362,6 +369,7 @@ export type Artifact = {
         _weak?: boolean;
         [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
       };
+      media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;
@@ -386,6 +394,7 @@ export type Character = {
       _weak?: boolean;
       [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
     };
+    media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
@@ -398,6 +407,7 @@ export type Character = {
       _weak?: boolean;
       [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
     };
+    media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
@@ -466,6 +476,7 @@ export type Character = {
         _weak?: boolean;
         [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
       };
+      media?: unknown;
       _type: "file";
     };
   };
@@ -496,6 +507,7 @@ export type Character = {
         _weak?: boolean;
         [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
       };
+      media?: unknown;
       _type: "file";
     };
   };
@@ -526,6 +538,7 @@ export type Character = {
         _weak?: boolean;
         [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
       };
+      media?: unknown;
       _type: "file";
     };
   };
@@ -556,6 +569,7 @@ export type Character = {
         _weak?: boolean;
         [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
       };
+      media?: unknown;
       _type: "file";
     };
   };
@@ -586,6 +600,7 @@ export type Character = {
         _weak?: boolean;
         [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
       };
+      media?: unknown;
       _type: "file";
     };
   };
@@ -616,6 +631,7 @@ export type Character = {
         _weak?: boolean;
         [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
       };
+      media?: unknown;
       _type: "file";
     };
   };
@@ -645,6 +661,7 @@ export type Character = {
         _weak?: boolean;
         [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
       };
+      media?: unknown;
       _type: "file";
     };
   };
@@ -674,6 +691,7 @@ export type Character = {
         _weak?: boolean;
         [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
       };
+      media?: unknown;
       _type: "file";
     };
   };
@@ -716,6 +734,7 @@ export type WeaponType = {
       _weak?: boolean;
       [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
     };
+    media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
@@ -738,6 +757,7 @@ export type Elements = {
       _weak?: boolean;
       [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
     };
+    media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
@@ -841,6 +861,7 @@ export type GET_ALL_ELEMENTSResult = Array<{
       _weak?: boolean;
       [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
     };
+    media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
@@ -864,6 +885,7 @@ export type GET_ALL_WEAPON_TYPESResult = Array<{
       _weak?: boolean;
       [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
     };
+    media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
@@ -885,6 +907,7 @@ export type GET_ALL_CHARACTERSResult = Array<{
       _weak?: boolean;
       [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
     };
+    media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
@@ -897,6 +920,7 @@ export type GET_ALL_CHARACTERSResult = Array<{
       _weak?: boolean;
       [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
     };
+    media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
@@ -920,6 +944,7 @@ export type GET_ALL_CHARACTERSResult = Array<{
         _weak?: boolean;
         [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
       };
+      media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;
@@ -937,6 +962,7 @@ export type GET_ALL_CHARACTERSResult = Array<{
         _weak?: boolean;
         [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
       };
+      media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;
@@ -954,6 +980,7 @@ export type GET_ALL_CHARACTERSResult = Array<{
         _weak?: boolean;
         [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
       };
+      media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;
@@ -971,6 +998,7 @@ export type GET_ALL_CHARACTERSResult = Array<{
         _weak?: boolean;
         [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
       };
+      media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;
@@ -988,6 +1016,7 @@ export type GET_ALL_CHARACTERSResult = Array<{
         _weak?: boolean;
         [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
       };
+      media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;

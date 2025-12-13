@@ -1,14 +1,10 @@
-import type React from 'react'
-import '@/app/globals.css'
+import type React from 'react';
+import '@/app/globals.css';
 
 export default function HomeLayout({
-    children,
+  children,
 }: {
-    children: React.ReactNode
+  children: React.ReactNode;
 }) {
-    return (
-        <div className='min-h-screen gradient-container'>
-            {children}
-        </div>
-    )
+  return <div className='min-h-screen gradient-container'>{children}</div>;
 }

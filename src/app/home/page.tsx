@@ -1,4 +1,4 @@
-import { CategoryCard } from '@/components/item-artifact/category-card'
+import { CategoryCard } from '@/components/item-artifact/category-card';
 
 export default function Dashboard() {
   return (
@@ -56,5 +56,5 @@ export default function Dashboard() {
         </div>
       </section>
     </div>
-  )
+  );
 }

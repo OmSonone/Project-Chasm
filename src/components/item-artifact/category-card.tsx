@@ -1,6 +1,12 @@
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { BookOpen, User, Package, Sparkles, LucideIcon } from 'lucide-react';
+import {
+  BookOpen,
+  User,
+  Package,
+  Sparkles,
+  type LucideIcon,
+} from 'lucide-react';
 
 interface Category {
   title: string;

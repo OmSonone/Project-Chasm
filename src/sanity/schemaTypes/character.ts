@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 const blockContent = {
   type: 'block',
@@ -18,7 +18,7 @@ const blockContent = {
       { title: 'Strike', value: 'strike-through' },
     ],
   },
-}
+};
 
 const audioField = {
   name: 'audio',
@@ -28,7 +28,7 @@ const audioField = {
     accept: 'audio/*',
   },
   description: 'Upload an audio file for narration',
-}
+};
 
 export const character = defineType({
   name: 'character',
@@ -316,4 +316,4 @@ export const character = defineType({
       ],
     }),
   ],
-})
+});

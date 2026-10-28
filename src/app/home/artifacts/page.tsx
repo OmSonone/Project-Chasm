@@ -57,9 +57,9 @@ export default function ArtifactsPage() {
                       key={type}
                       onClick={() => setSelectedType(type as ArtifactType)}
                       className={`flex-shrink-0 rounded-lg p-1 transition-colors ${
-                        selectedType === type ?
-                          'bg-primary/10 ring-1 ring-primary'
-                        : 'bg-muted/50 hover:bg-muted'
+                        selectedType === type
+                          ? 'bg-primary/10 ring-1 ring-primary'
+                          : 'bg-muted/50 hover:bg-muted'
                       }`}
                     >
                       <div className='rounded-md w-16 h-16 overflow-hidden'>

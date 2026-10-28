@@ -1,21 +1,20 @@
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { urlFor } from '@/sanity/lib/image'
-import { CharacterWithExpandedRefs } from '@/components/character/character-card'
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { urlFor } from '@/sanity/lib/image';
+import type { CharacterWithExpandedRefs } from '@/lib/characters';
 
 const CharacterDetails = (character: CharacterWithExpandedRefs) => {
-
   return (
     <div className='hidden lg:block top-24 sticky lg:w-2/3 xl:w-2/3'>
       <div className='bg-card rounded-xl aspect-square overflow-hidden'>
         <div className='relative w-full h-full'>
           <Image
             src={
-              character.splash ?
-                urlFor(character.splash).url()
-              : '/static/images/placeholder.svg?height=800&width=600'
+              character.splash
+                ? urlFor(character.splash).url()
+                : '/static/images/placeholder.svg?height=800&width=600'
             }
             alt='Selected character splash art'
             fill
@@ -36,13 +35,15 @@ const CharacterDetails = (character: CharacterWithExpandedRefs) => {
             'The Raiden Shogun is the awesome and terrible power of thunder incarnate, the exalted ruler of the Inazuma Shogunate.'}
         </p>
         <div className='mt-4'>
-          <Link href={`/home/characters/${character.id}`}>
-            <Button className='w-full'>View Character Details</Button>
-          </Link>
+          <Button asChild className='w-full'>
+            <Link href={`/home/characters/${character.id}`}>
+              View Character Details
+            </Link>
+          </Button>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CharacterDetails
+export default CharacterDetails;

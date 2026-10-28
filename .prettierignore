@@ -1,0 +1,16 @@
+# dependencies and build output
+node_modules
+.next
+out
+build
+coverage
+
+# generated files
+package-lock.json
+next-env.d.ts
+src/sanity/types.ts
+src/sanity/extract.json
+
+# binary assets
+public
+src/app/fonts

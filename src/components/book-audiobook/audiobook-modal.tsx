@@ -61,9 +61,11 @@ export function AudiobookModal() {
               className='rounded-full w-12 h-12'
               onClick={() => setIsPlaying(!isPlaying)}
             >
-              {isPlaying ?
+              {isPlaying ? (
                 <Pause className='w-6 h-6' />
-              : <Play className='pl-1 w-6 h-6' />}
+              ) : (
+                <Play className='pl-1 w-6 h-6' />
+              )}
               <span className='sr-only'>{isPlaying ? 'Pause' : 'Play'}</span>
             </Button>
             <Button variant='ghost' size='icon' className='w-8 h-8'>

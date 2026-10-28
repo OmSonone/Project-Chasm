@@ -1,108 +1,133 @@
-import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import { Elements, WeaponType } from '@/sanity/types';
-import { urlFor } from '@/sanity/lib/image';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { CHARACTER_FILTER_PREFIX } from '@/lib/characters';
+import type { Elements, WeaponType } from '@/sanity/types';
+import { urlFor } from '@/sanity/lib/image';
 
 interface CharacterFilterProps {
   elements: Elements[];
   weaponTypes: WeaponType[];
-  query: { query: string };
+  query: string;
 }
 
-export async function CharacterFilter({
+/** The filter value part of `?query=filter_<value>`, or an empty string. */
+function getFilterValue(query: string): string {
+  if (!query.startsWith(CHARACTER_FILTER_PREFIX)) return '';
+
+  return query.slice(CHARACTER_FILTER_PREFIX.length).trim().toLowerCase();
+}
+
+/** Stable URL value for a Sanity document that may be missing its `id`. */
+function filterValueFor(document: { id?: string; name?: string; _id: string }) {
+  return document.id ?? document.name ?? document._id;
+}
+
+export function CharacterFilter({
   elements,
   weaponTypes,
   query,
 }: CharacterFilterProps) {
-  const { query: queryString } = await query;
-  const queryValue = queryString?.split('_')[1];
+  const filterValue = getFilterValue(query);
 
   return (
     <div className='space-y-4 w-full'>
       <div className='flex flex-wrap gap-2'>
-        <Link href={`/home/characters`}>
-          <Button
-            variant='outline'
-            size='sm'
-            className={`gap-1 cursor-pointer`}
-          >
+        <Button
+          asChild
+          variant='outline'
+          size='sm'
+          className={`gap-1 cursor-pointer ${filterValue === '' ? 'button-active' : ''}`}
+        >
+          <Link href='/home/characters'>
             <span>All</span>
-          </Button>
-        </Link>
-        {/* Element Filters */}
-        {elements.map((element: Elements) => (
-          <Link
-            href={`/home/characters?query=filter_${element.id}`}
-            key={element.id}
-          >
+          </Link>
+        </Button>
+
+        {elements.map((element) => {
+          const value = filterValueFor(element);
+
+          return (
             <Button
+              asChild
               variant='outline'
               size='sm'
-              className={`gap-1 cursor-pointer ${queryValue === element.id ? 'button-active' : ''}`}
+              key={element._id}
+              className={`gap-1 cursor-pointer ${
+                filterValue === value.toLowerCase() ? 'button-active' : ''
+              }`}
             >
-              <Image
-                src={
-                  element.image ?
-                    urlFor(element.image).url()
-                  : `/static/images/elements/${element.name}.png`
-                }
-                alt={`${element?.image?.alt ?? 'Pyro'} Image`}
-                width={20}
-                height={20}
-              />
-              <span>{element.name}</span>
+              <Link href={`/home/characters?query=filter_${value}`}>
+                <Image
+                  src={
+                    element.image
+                      ? urlFor(element.image).url()
+                      : `/static/images/elements/${element.name}.png`
+                  }
+                  alt=''
+                  aria-hidden
+                  width={20}
+                  height={20}
+                />
+                <span>{element.name}</span>
+              </Link>
             </Button>
-          </Link>
-        ))}
+          );
+        })}
 
-        {/* Weapon Filters */}
-        {weaponTypes.map((weaponType: WeaponType) => (
-          <Link
-            href={`/home/characters?query=filter_${weaponType.id}`}
-            key={weaponType.id}
-          >
+        {weaponTypes.map((weaponType) => {
+          const value = filterValueFor(weaponType);
+
+          return (
             <Button
+              asChild
               variant='outline'
               size='sm'
-              className={`gap-1 cursor-pointer ${queryValue === weaponType.id ? 'button-active' : ''}`}
+              key={weaponType._id}
+              className={`gap-1 cursor-pointer ${
+                filterValue === value.toLowerCase() ? 'button-active' : ''
+              }`}
             >
-              <Image
-                src={
-                  weaponType.image ?
-                    urlFor(weaponType.image).url()
-                  : `/static/images/weapons/${weaponType.name}.png`
-                }
-                alt={`${weaponType?.image?.alt ?? 'Sword'} Image`}
-                width={20}
-                height={20}
-              />
-              <span>{weaponType.name}</span>
+              <Link href={`/home/characters?query=filter_${value}`}>
+                <Image
+                  src={
+                    weaponType.image
+                      ? urlFor(weaponType.image).url()
+                      : `/static/images/weapons/${weaponType.name}.png`
+                  }
+                  alt=''
+                  aria-hidden
+                  width={20}
+                  height={20}
+                />
+                <span>{weaponType.name}</span>
+              </Link>
             </Button>
-          </Link>
-        ))}
+          );
+        })}
 
-        {/* Rarity Filters */}
-        <Link href={`/home/characters?query=filter_4`}>
+        {(['4', '5'] as const).map((rarity) => (
           <Button
+            asChild
             variant='outline'
             size='sm'
-            className={`gap-1 cursor-pointer ${queryValue === '4' ? 'button-active' : ''}`}
+            key={rarity}
+            className={`gap-1 cursor-pointer ${
+              filterValue === rarity ? 'button-active' : ''
+            }`}
           >
-            <span className='text-purple-400'>★★★★</span>
-            <span>4-Star</span>
+            <Link href={`/home/characters?query=filter_${rarity}`}>
+              <span
+                className={
+                  rarity === '5' ? 'text-amber-400' : 'text-purple-400'
+                }
+              >
+                {'★'.repeat(Number(rarity))}
+              </span>
+              <span>{rarity}-Star</span>
+            </Link>
           </Button>
-        </Link>
-        <Link href={`/home/characters?query=filter_5`}>
-          <Button
-            variant='outline'
-            size='sm'
-            className={`gap-1 cursor-pointer ${queryValue === '5' ? 'button-active' : ''}`}
-          >
-            <span className='text-amber-400'>★★★★★</span>
-            <span>5-Star</span>
-          </Button>
-        </Link>
+        ))}
       </div>
     </div>
   );

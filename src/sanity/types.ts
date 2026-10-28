@@ -12,7 +12,38 @@
  * ---------------------------------------------------------------------------------
  */
 
-// Source: schema.json
+export declare const internalGroqTypeReferenceTo: unique symbol;
+
+// Source: src/sanity/extract.json
+export type SanityFileAssetReference = {
+  _ref: string;
+  _type: 'reference';
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
+};
+
+export type Audio = {
+  asset?: SanityFileAssetReference;
+  media?: unknown;
+  _type: 'file';
+};
+
+export type SanityImageAssetReference = {
+  _ref: string;
+  _type: 'reference';
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+};
+
+export type SandsOfEonImage = {
+  asset?: SanityImageAssetReference;
+  media?: unknown;
+  hotspot?: SanityImageHotspot;
+  crop?: SanityImageCrop;
+  alt?: string;
+  _type: 'image';
+};
+
 export type Version = {
   _id: string;
   _type: 'version';
@@ -29,6 +60,13 @@ export type Version = {
   }>;
 };
 
+export type WeaponTypeReference = {
+  _ref: string;
+  _type: 'reference';
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: 'weaponType';
+};
+
 export type Weapon = {
   _id: string;
   _type: 'weapon';
@@ -37,12 +75,7 @@ export type Weapon = {
   _rev: string;
   name?: string;
   image?: {
-    asset?: {
-      _ref: string;
-      _type: 'reference';
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-    };
+    asset?: SanityImageAssetReference;
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
@@ -50,12 +83,7 @@ export type Weapon = {
     _type: 'image';
   };
   rarity?: number;
-  weapon_type?: {
-    _ref: string;
-    _type: 'reference';
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: 'weaponType';
-  };
+  weapon_type?: WeaponTypeReference;
   region?: string;
   type?: string;
   baseAttack?: number;
@@ -99,6 +127,22 @@ export type Weapon = {
   }>;
 };
 
+export type SanityImageCrop = {
+  _type: 'sanity.imageCrop';
+  top?: number;
+  bottom?: number;
+  left?: number;
+  right?: number;
+};
+
+export type SanityImageHotspot = {
+  _type: 'sanity.imageHotspot';
+  x?: number;
+  y?: number;
+  height?: number;
+  width?: number;
+};
+
 export type Book = {
   _id: string;
   _type: 'book';
@@ -108,12 +152,7 @@ export type Book = {
   id?: string;
   name?: string;
   image?: {
-    asset?: {
-      _ref: string;
-      _type: 'reference';
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-    };
+    asset?: SanityImageAssetReference;
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
@@ -142,12 +181,7 @@ export type Book = {
       _key: string;
     }>;
     audio?: {
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
-      };
+      asset?: SanityFileAssetReference;
       media?: unknown;
       _type: 'file';
     };
@@ -187,19 +221,7 @@ export type Artifact = {
       _type: 'block';
       _key: string;
     }>;
-    image?: {
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-      };
-      media?: unknown;
-      hotspot?: SanityImageHotspot;
-      crop?: SanityImageCrop;
-      alt?: string;
-      _type: 'image';
-    };
+    image?: SandsOfEonImage;
   };
   sandsOfEon?: {
     shortDescription?: string;
@@ -221,19 +243,7 @@ export type Artifact = {
       _type: 'block';
       _key: string;
     }>;
-    image?: {
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-      };
-      media?: unknown;
-      hotspot?: SanityImageHotspot;
-      crop?: SanityImageCrop;
-      alt?: string;
-      _type: 'image';
-    };
+    image?: SandsOfEonImage;
   };
   plumeOfDeath?: {
     shortDescription?: string;
@@ -255,19 +265,7 @@ export type Artifact = {
       _type: 'block';
       _key: string;
     }>;
-    image?: {
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-      };
-      media?: unknown;
-      hotspot?: SanityImageHotspot;
-      crop?: SanityImageCrop;
-      alt?: string;
-      _type: 'image';
-    };
+    image?: SandsOfEonImage;
   };
   circletOfLogos?: {
     shortDescription?: string;
@@ -289,19 +287,7 @@ export type Artifact = {
       _type: 'block';
       _key: string;
     }>;
-    image?: {
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-      };
-      media?: unknown;
-      hotspot?: SanityImageHotspot;
-      crop?: SanityImageCrop;
-      alt?: string;
-      _type: 'image';
-    };
+    image?: SandsOfEonImage;
   };
   gobletOfEonothem?: {
     shortDescription?: string;
@@ -323,20 +309,15 @@ export type Artifact = {
       _type: 'block';
       _key: string;
     }>;
-    image?: {
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-      };
-      media?: unknown;
-      hotspot?: SanityImageHotspot;
-      crop?: SanityImageCrop;
-      alt?: string;
-      _type: 'image';
-    };
+    image?: SandsOfEonImage;
   };
+};
+
+export type ElementsReference = {
+  _ref: string;
+  _type: 'reference';
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: 'elements';
 };
 
 export type Character = {
@@ -349,12 +330,7 @@ export type Character = {
   name?: string;
   description?: string;
   image?: {
-    asset?: {
-      _ref: string;
-      _type: 'reference';
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-    };
+    asset?: SanityImageAssetReference;
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
@@ -362,12 +338,7 @@ export type Character = {
     _type: 'image';
   };
   splash?: {
-    asset?: {
-      _ref: string;
-      _type: 'reference';
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-    };
+    asset?: SanityImageAssetReference;
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
@@ -376,41 +347,16 @@ export type Character = {
   };
   title?: string;
   rarity?: number;
-  weapon?: {
-    _ref: string;
-    _type: 'reference';
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: 'weaponType';
-  };
-  element?: {
-    _ref: string;
-    _type: 'reference';
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: 'elements';
-  };
+  weapon?: WeaponTypeReference;
+  element?: ElementsReference;
   birthday?: string;
   constellation?: string;
   region?: string;
   special_dish?: string;
   affiliation?: string;
-  vision?: {
-    _ref: string;
-    _type: 'reference';
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: 'elements';
-  };
-  gnosis?: {
-    _ref: string;
-    _type: 'reference';
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: 'elements';
-  };
-  authority?: {
-    _ref: string;
-    _type: 'reference';
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: 'elements';
-  };
+  vision?: ElementsReference;
+  gnosis?: ElementsReference;
+  authority?: ElementsReference;
   character_details?: {
     content?: Array<{
       children?: Array<{
@@ -430,16 +376,7 @@ export type Character = {
       _type: 'block';
       _key: string;
     }>;
-    audio?: {
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
-      };
-      media?: unknown;
-      _type: 'file';
-    };
+    audio?: Audio;
   };
   character_story_1?: {
     title?: string;
@@ -461,16 +398,7 @@ export type Character = {
       _type: 'block';
       _key: string;
     }>;
-    audio?: {
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
-      };
-      media?: unknown;
-      _type: 'file';
-    };
+    audio?: Audio;
   };
   character_story_2?: {
     title?: string;
@@ -492,16 +420,7 @@ export type Character = {
       _type: 'block';
       _key: string;
     }>;
-    audio?: {
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
-      };
-      media?: unknown;
-      _type: 'file';
-    };
+    audio?: Audio;
   };
   character_story_3?: {
     title?: string;
@@ -523,16 +442,7 @@ export type Character = {
       _type: 'block';
       _key: string;
     }>;
-    audio?: {
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
-      };
-      media?: unknown;
-      _type: 'file';
-    };
+    audio?: Audio;
   };
   character_story_4?: {
     title?: string;
@@ -554,16 +464,7 @@ export type Character = {
       _type: 'block';
       _key: string;
     }>;
-    audio?: {
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
-      };
-      media?: unknown;
-      _type: 'file';
-    };
+    audio?: Audio;
   };
   character_story_5?: {
     title?: string;
@@ -585,16 +486,7 @@ export type Character = {
       _type: 'block';
       _key: string;
     }>;
-    audio?: {
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
-      };
-      media?: unknown;
-      _type: 'file';
-    };
+    audio?: Audio;
   };
   extra_story?: {
     content?: Array<{
@@ -615,16 +507,7 @@ export type Character = {
       _type: 'block';
       _key: string;
     }>;
-    audio?: {
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
-      };
-      media?: unknown;
-      _type: 'file';
-    };
+    audio?: Audio;
   };
   vision_story?: {
     content?: Array<{
@@ -645,16 +528,7 @@ export type Character = {
       _type: 'block';
       _key: string;
     }>;
-    audio?: {
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
-      };
-      media?: unknown;
-      _type: 'file';
-    };
+    audio?: Audio;
   };
 };
 
@@ -667,12 +541,7 @@ export type WeaponType = {
   id?: string;
   name?: string;
   image?: {
-    asset?: {
-      _ref: string;
-      _type: 'reference';
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-    };
+    asset?: SanityImageAssetReference;
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
@@ -690,12 +559,7 @@ export type Elements = {
   id?: string;
   name?: string;
   image?: {
-    asset?: {
-      _ref: string;
-      _type: 'reference';
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-    };
+    asset?: SanityImageAssetReference;
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
@@ -730,20 +594,16 @@ export type SanityImageDimensions = {
   aspectRatio?: number;
 };
 
-export type SanityImageHotspot = {
-  _type: 'sanity.imageHotspot';
-  x?: number;
-  y?: number;
-  height?: number;
-  width?: number;
-};
-
-export type SanityImageCrop = {
-  _type: 'sanity.imageCrop';
-  top?: number;
-  bottom?: number;
-  left?: number;
-  right?: number;
+export type SanityImageMetadata = {
+  _type: 'sanity.imageMetadata';
+  location?: Geopoint;
+  dimensions?: SanityImageDimensions;
+  palette?: SanityImagePalette;
+  lqip?: string;
+  blurHash?: string;
+  thumbHash?: string;
+  hasAlpha?: boolean;
+  isOpaque?: boolean;
 };
 
 export type SanityFileAsset = {
@@ -766,6 +626,13 @@ export type SanityFileAsset = {
   path?: string;
   url?: string;
   source?: SanityAssetSourceData;
+};
+
+export type SanityAssetSourceData = {
+  _type: 'sanity.assetSourceData';
+  name?: string;
+  id?: string;
+  url?: string;
 };
 
 export type SanityImageAsset = {
@@ -791,17 +658,6 @@ export type SanityImageAsset = {
   source?: SanityAssetSourceData;
 };
 
-export type SanityImageMetadata = {
-  _type: 'sanity.imageMetadata';
-  location?: Geopoint;
-  dimensions?: SanityImageDimensions;
-  palette?: SanityImagePalette;
-  lqip?: string;
-  blurHash?: string;
-  hasAlpha?: boolean;
-  isOpaque?: boolean;
-};
-
 export type Geopoint = {
   _type: 'geopoint';
   lat?: number;
@@ -815,34 +671,33 @@ export type Slug = {
   source?: string;
 };
 
-export type SanityAssetSourceData = {
-  _type: 'sanity.assetSourceData';
-  name?: string;
-  id?: string;
-  url?: string;
-};
-
 export type AllSanitySchemaTypes =
+  | SanityFileAssetReference
+  | Audio
+  | SanityImageAssetReference
+  | SandsOfEonImage
   | Version
+  | WeaponTypeReference
   | Weapon
+  | SanityImageCrop
+  | SanityImageHotspot
   | Book
   | Artifact
+  | ElementsReference
   | Character
   | WeaponType
   | Elements
   | SanityImagePaletteSwatch
   | SanityImagePalette
   | SanityImageDimensions
-  | SanityImageHotspot
-  | SanityImageCrop
-  | SanityFileAsset
-  | SanityImageAsset
   | SanityImageMetadata
+  | SanityFileAsset
+  | SanityAssetSourceData
+  | SanityImageAsset
   | Geopoint
-  | Slug
-  | SanityAssetSourceData;
-export declare const internalGroqTypeReferenceTo: unique symbol;
-// Source: ./src/components/layout/changelog-popup.tsx
+  | Slug;
+
+// Source: src/components/layout/changelog-popup.tsx
 // Variable: query
 // Query: *[_type == "version" && isPublished == true] | order(releaseDate desc)[0]
 export type QueryResult = {
@@ -853,7 +708,7 @@ export type QueryResult = {
   _rev: string;
   version?: string;
   releaseDate?: string;
-  isPublished?: boolean;
+  isPublished: true;
   changes?: Array<{
     type?: 'breaking' | 'bugfix' | 'feature' | 'improvement';
     description?: string;
@@ -861,10 +716,10 @@ export type QueryResult = {
   }>;
 } | null;
 
-// Source: ./src/sanity/lib/queries.ts
+// Source: src/sanity/lib/queries.ts
 // Variable: GET_ALL_ELEMENTS
 // Query: *[_type == "elements"] | order(name asc)
-export type GET_ALL_ELEMENTSResult = Array<{
+export type GET_ALL_ELEMENTS_RESULT = Array<{
   _id: string;
   _type: 'elements';
   _createdAt: string;
@@ -873,12 +728,7 @@ export type GET_ALL_ELEMENTSResult = Array<{
   id?: string;
   name?: string;
   image?: {
-    asset?: {
-      _ref: string;
-      _type: 'reference';
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-    };
+    asset?: SanityImageAssetReference;
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
@@ -886,9 +736,11 @@ export type GET_ALL_ELEMENTSResult = Array<{
     _type: 'image';
   };
 }>;
+
+// Source: src/sanity/lib/queries.ts
 // Variable: GET_ALL_WEAPON_TYPES
 // Query: *[_type == "weaponType"] | order(name asc)
-export type GET_ALL_WEAPON_TYPESResult = Array<{
+export type GET_ALL_WEAPON_TYPES_RESULT = Array<{
   _id: string;
   _type: 'weaponType';
   _createdAt: string;
@@ -897,12 +749,7 @@ export type GET_ALL_WEAPON_TYPESResult = Array<{
   id?: string;
   name?: string;
   image?: {
-    asset?: {
-      _ref: string;
-      _type: 'reference';
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-    };
+    asset?: SanityImageAssetReference;
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
@@ -910,21 +757,18 @@ export type GET_ALL_WEAPON_TYPESResult = Array<{
     _type: 'image';
   };
 }>;
+
+// Source: src/sanity/lib/queries.ts
 // Variable: GET_ALL_CHARACTERS
 // Query: *[_type == "character"] | order(name asc) {    _id,    _type,    id,    name,    description,    image,    splash,    title,    rarity,    birthday,    constellation,    region,    special_dish,    affiliation,    "weapon": weapon->{_id, name, description, image},    "element": element->{_id, name, description, image},    "vision": vision->{_id, name, description, image},    "gnosis": gnosis->{_id, name, description, image},    "authority": authority->{_id, name, description, image}  }
-export type GET_ALL_CHARACTERSResult = Array<{
+export type GET_ALL_CHARACTERS_RESULT = Array<{
   _id: string;
   _type: 'character';
   id: string | null;
   name: string | null;
   description: string | null;
   image: {
-    asset?: {
-      _ref: string;
-      _type: 'reference';
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-    };
+    asset?: SanityImageAssetReference;
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
@@ -932,12 +776,7 @@ export type GET_ALL_CHARACTERSResult = Array<{
     _type: 'image';
   } | null;
   splash: {
-    asset?: {
-      _ref: string;
-      _type: 'reference';
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-    };
+    asset?: SanityImageAssetReference;
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
@@ -956,12 +795,7 @@ export type GET_ALL_CHARACTERSResult = Array<{
     name: string | null;
     description: null;
     image: {
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-      };
+      asset?: SanityImageAssetReference;
       media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
@@ -974,12 +808,7 @@ export type GET_ALL_CHARACTERSResult = Array<{
     name: string | null;
     description: null;
     image: {
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-      };
+      asset?: SanityImageAssetReference;
       media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
@@ -992,12 +821,7 @@ export type GET_ALL_CHARACTERSResult = Array<{
     name: string | null;
     description: null;
     image: {
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-      };
+      asset?: SanityImageAssetReference;
       media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
@@ -1010,12 +834,7 @@ export type GET_ALL_CHARACTERSResult = Array<{
     name: string | null;
     description: null;
     image: {
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-      };
+      asset?: SanityImageAssetReference;
       media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
@@ -1028,12 +847,7 @@ export type GET_ALL_CHARACTERSResult = Array<{
     name: string | null;
     description: null;
     image: {
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-      };
+      asset?: SanityImageAssetReference;
       media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
@@ -1044,12 +858,15 @@ export type GET_ALL_CHARACTERSResult = Array<{
 }>;
 
 // Query TypeMap
-import '@sanity/client';
-declare module '@sanity/client' {
+declare global {
   interface SanityQueries {
     '*[_type == "version" && isPublished == true] | order(releaseDate desc)[0]': QueryResult;
-    '*[_type == "elements"] | order(name asc)': GET_ALL_ELEMENTSResult;
-    '*[_type == "weaponType"] | order(name asc)': GET_ALL_WEAPON_TYPESResult;
-    '*[_type == "character"] | order(name asc) {\n    _id,\n    _type,\n    id,\n    name,\n    description,\n    image,\n    splash,\n    title,\n    rarity,\n    birthday,\n    constellation,\n    region,\n    special_dish,\n    affiliation,\n    "weapon": weapon->{_id, name, description, image},\n    "element": element->{_id, name, description, image},\n    "vision": vision->{_id, name, description, image},\n    "gnosis": gnosis->{_id, name, description, image},\n    "authority": authority->{_id, name, description, image}\n  }': GET_ALL_CHARACTERSResult;
+    '*[_type == "elements"] | order(name asc)': GET_ALL_ELEMENTS_RESULT;
+    '*[_type == "weaponType"] | order(name asc)': GET_ALL_WEAPON_TYPES_RESULT;
+    '*[_type == "character"] | order(name asc) {\n    _id,\n    _type,\n    id,\n    name,\n    description,\n    image,\n    splash,\n    title,\n    rarity,\n    birthday,\n    constellation,\n    region,\n    special_dish,\n    affiliation,\n    "weapon": weapon->{_id, name, description, image},\n    "element": element->{_id, name, description, image},\n    "vision": vision->{_id, name, description, image},\n    "gnosis": gnosis->{_id, name, description, image},\n    "authority": authority->{_id, name, description, image}\n  }': GET_ALL_CHARACTERS_RESULT;
   }
+}
+// Lets @sanity/client releases that predate the global registry read it too
+declare module '@sanity/client' {
+  interface SanityQueries extends globalThis.SanityQueries {}
 }

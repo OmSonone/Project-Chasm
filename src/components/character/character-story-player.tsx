@@ -15,9 +15,10 @@ interface CharacterStoryPlayerProps {
 }
 
 export function CharacterStoryPlayer({ story }: CharacterStoryPlayerProps) {
+  // A new `key` remounts the player, resetting playback for the new story.
   return (
     <SimulatedAudioPlayer
-      trackId={story.id}
+      key={story.id}
       className='bg-card/50 p-4 border rounded-lg'
     />
   );

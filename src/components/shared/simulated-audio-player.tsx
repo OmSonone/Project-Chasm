@@ -14,8 +14,6 @@ const TICK_MS = 500;
 const PROGRESS_STEP = 0.5;
 
 export interface SimulatedAudioPlayerProps {
-  /** Playback restarts whenever this value changes (e.g. a new track id). */
-  trackId?: string;
   className?: string;
 }
 
@@ -23,38 +21,37 @@ export interface SimulatedAudioPlayerProps {
  * Progress-simulating audio player shared by the book audiobook and the
  * character story players. Swap the interval for an `<audio>` element once
  * real media is available.
+ *
+ * Give the player a `key` per track (see the wrappers) so switching tracks
+ * resets playback state.
  */
-export function SimulatedAudioPlayer({
-  trackId,
-  className,
-}: SimulatedAudioPlayerProps) {
+export function SimulatedAudioPlayer({ className }: SimulatedAudioPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [volume, setVolume] = useState(80);
 
-  // Start over when the selected track changes.
-  useEffect(() => {
-    setIsPlaying(false);
-    setProgress(0);
-  }, [trackId]);
+  const isFinished = progress >= 100;
+  const isActivelyPlaying = isPlaying && !isFinished;
 
   useEffect(() => {
-    if (!isPlaying) return;
+    if (!isActivelyPlaying) return;
 
     const interval = setInterval(() => {
       setProgress((previous) => Math.min(previous + PROGRESS_STEP, 100));
     }, TICK_MS);
 
     return () => clearInterval(interval);
-  }, [isPlaying]);
+  }, [isActivelyPlaying]);
 
-  // Rewind once the (simulated) track finishes.
-  useEffect(() => {
-    if (progress < 100) return;
+  const togglePlayback = () => {
+    if (isActivelyPlaying) {
+      setIsPlaying(false);
+      return;
+    }
 
-    setIsPlaying(false);
-    setProgress(0);
-  }, [progress]);
+    if (isFinished) setProgress(0);
+    setIsPlaying(true);
+  };
 
   const currentTime = formatTime(
     (progress / 100) * SIMULATED_TRACK_DURATION_SECONDS
@@ -86,14 +83,16 @@ export function SimulatedAudioPlayer({
           variant='outline'
           size='icon'
           className='rounded-full w-12 h-12'
-          onClick={() => setIsPlaying((playing) => !playing)}
+          onClick={togglePlayback}
         >
-          {isPlaying ? (
+          {isActivelyPlaying ? (
             <Pause className='w-6 h-6' />
           ) : (
             <Play className='pl-1 w-6 h-6' />
           )}
-          <span className='sr-only'>{isPlaying ? 'Pause' : 'Play'}</span>
+          <span className='sr-only'>
+            {isActivelyPlaying ? 'Pause' : 'Play'}
+          </span>
         </Button>
         <Button variant='ghost' size='icon' className='w-8 h-8'>
           <SkipForward className='w-4 h-4' />

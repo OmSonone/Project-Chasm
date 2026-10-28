@@ -8,15 +8,15 @@ Studio at `/studio`.
 
 ## Stack
 
-- [Next.js 15](https://nextjs.org) (App Router, React 19, Turbopack)
-- [Sanity](https://www.sanity.io) via `next-sanity`
+- [Next.js 16](https://nextjs.org) (App Router, React 19, Turbopack)
+- [Sanity](https://www.sanity.io) 6 via `next-sanity` 13
 - Tailwind CSS v4 + shadcn/Radix primitives
 - Vitest + React Testing Library
 - ESLint (flat config) + Prettier
 
 ## Getting started
 
-1. Install dependencies (Node `>=20.9`):
+1. Install dependencies (Node `>=22.12`, see `.nvmrc`):
 
    ```bash
    npm ci
@@ -57,6 +57,17 @@ Studio at `/studio`.
 | `npm run test:coverage` | Vitest with V8 coverage and thresholds             |
 | `npm run verify`        | Format + lint + types + tests (run before pushing) |
 | `npm run typegen`       | Regenerate Sanity schema types                     |
+
+## Dependency overrides
+
+`package.json` pins patched versions of transitive packages through
+`overrides` (for example `minimatch`, `brace-expansion`, `tar`, `sharp`,
+`nanoid`). The keys are scoped by major (`"minimatch@^3.0.0": "^3.1.2"`)
+because ESLint needs `minimatch@3` while `glob@10` needs `minimatch@9`;
+a blanket override breaks the toolchain.
+
+After changing dependencies run `npm audit --audit-level=high`, and keep
+`npm run verify` green.
 
 ## Testing
 

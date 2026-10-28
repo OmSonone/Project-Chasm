@@ -1,11 +1,12 @@
 import { type SchemaTypeDefinition } from 'sanity';
-import { elements } from '@/sanity/schemaTypes/elements';
-import { weaponType } from '@/sanity/schemaTypes/weaponType';
-import { character } from '@/sanity/schemaTypes/character';
-import { artifact } from '@/sanity/schemaTypes/artifact';
-import { book } from '@/sanity/schemaTypes/book';
-import { weapon } from '@/sanity/schemaTypes/weapon';
-import { version } from '@/sanity/schemaTypes/version';
+// Relative imports: the Sanity CLI loads these files without the `@/` alias.
+import { elements } from './elements';
+import { weaponType } from './weaponType';
+import { character } from './character';
+import { artifact } from './artifact';
+import { book } from './book';
+import { weapon } from './weapon';
+import { version } from './version';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [elements, weaponType, character, artifact, book, weapon, version],

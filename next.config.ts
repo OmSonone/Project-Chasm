@@ -4,6 +4,12 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
     dangerouslyAllowSVG: true,
+    // Local placeholders are served with decorative query strings
+    // (e.g. `?height=200&width=200`); Next 16 requires this allow-list.
+    localPatterns: [
+      { pathname: '/static/images/**' },
+      { pathname: '/placeholder.svg' },
+    ],
     remotePatterns: [
       {
         protocol: 'https',

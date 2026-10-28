@@ -81,7 +81,7 @@ describe('AudiobookPlayer', () => {
     expect(screen.getByRole('button', { name: 'Play' })).toBeInTheDocument();
   });
 
-  it('rewinds when the track finishes', () => {
+  it('stops at the end of the track', () => {
     setup();
 
     fireEvent.click(screen.getByRole('button', { name: 'Play' }));
@@ -90,7 +90,8 @@ describe('AudiobookPlayer', () => {
       vi.advanceTimersByTime(5 * 60 * 1000);
     });
 
-    expect(screen.getByText('0:00')).toBeInTheDocument();
+    // Elapsed time and duration both read 5:00 once the track ends.
+    expect(screen.getAllByText('5:00')).toHaveLength(2);
     expect(screen.getByRole('button', { name: 'Play' })).toBeInTheDocument();
   });
 });

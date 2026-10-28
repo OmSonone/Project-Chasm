@@ -17,5 +17,6 @@ interface AudiobookPlayerProps {
 }
 
 export function AudiobookPlayer({ volume }: AudiobookPlayerProps) {
-  return <SimulatedAudioPlayer trackId={volume.id} className='space-y-6' />;
+  // A new `key` remounts the player, resetting playback for the new volume.
+  return <SimulatedAudioPlayer key={volume.id} className='space-y-6' />;
 }

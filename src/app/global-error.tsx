@@ -1,5 +1,7 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+
 export default function GlobalErrorComponent({
   error,
   reset,
@@ -7,6 +9,8 @@ export default function GlobalErrorComponent({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  const router = useRouter();
+
   return (
     <html lang='en'>
       <body>
@@ -27,9 +31,7 @@ export default function GlobalErrorComponent({
               Try again
             </button>
             <button
-              onClick={() => {
-                window.location.href = '/';
-              }}
+              onClick={() => router.push('/')}
               className='hover:bg-gray-100 px-4 py-2 border rounded cursor-pointer'
             >
               Return to Home Page

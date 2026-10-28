@@ -23,19 +23,19 @@ export default function BookDetailPage() {
 
   // If no volumes are found, create a default one from the book
   const allVolumes =
-    volumes.length > 0 ?
-      volumes
-    : [
-        {
-          id: book.id,
-          bookId: book.id.split('-')[0],
-          title: book.title,
-          volume: book.volume || 'Volume 1',
-          content: 'This content is not available yet.',
-          image: book.image,
-          audioUrl: '',
-        },
-      ];
+    volumes.length > 0
+      ? volumes
+      : [
+          {
+            id: book.id,
+            bookId: book.id.split('-')[0],
+            title: book.title,
+            volume: book.volume || 'Volume 1',
+            content: 'This content is not available yet.',
+            image: book.image,
+            audioUrl: '',
+          },
+        ];
 
   if (!book) {
     return <div>Book not found</div>;
@@ -78,9 +78,9 @@ export default function BookDetailPage() {
                   <div className='flex items-center gap-2 mt-2'>
                     <span
                       className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                        book.type === 'lore' ?
-                          'bg-amber-500/20 text-amber-500'
-                        : 'bg-purple-500/20 text-purple-500'
+                        book.type === 'lore'
+                          ? 'bg-amber-500/20 text-amber-500'
+                          : 'bg-purple-500/20 text-purple-500'
                       }`}
                     >
                       {book.type.charAt(0).toUpperCase() + book.type.slice(1)}

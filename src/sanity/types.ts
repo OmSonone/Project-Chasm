@@ -15,7 +15,7 @@
 // Source: schema.json
 export type Version = {
   _id: string;
-  _type: "version";
+  _type: 'version';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -23,7 +23,7 @@ export type Version = {
   releaseDate?: string;
   isPublished?: boolean;
   changes?: Array<{
-    type?: "feature" | "bugfix" | "improvement" | "breaking";
+    type?: 'feature' | 'bugfix' | 'improvement' | 'breaking';
     description?: string;
     _key: string;
   }>;
@@ -31,7 +31,7 @@ export type Version = {
 
 export type Weapon = {
   _id: string;
-  _type: "weapon";
+  _type: 'weapon';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -39,22 +39,22 @@ export type Weapon = {
   image?: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
     };
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
-    _type: "image";
+    _type: 'image';
   };
   rarity?: number;
   weapon_type?: {
     _ref: string;
-    _type: "reference";
+    _type: 'reference';
     _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "weaponType";
+    [internalGroqTypeReferenceTo]?: 'weaponType';
   };
   region?: string;
   type?: string;
@@ -65,43 +65,43 @@ export type Weapon = {
     children?: Array<{
       marks?: Array<string>;
       text?: string;
-      _type: "span";
+      _type: 'span';
       _key: string;
     }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "blockquote";
-    listItem?: "bullet" | "number";
+    style?: 'normal' | 'h1' | 'h2' | 'h3' | 'blockquote';
+    listItem?: 'bullet' | 'number';
     markDefs?: Array<{
       href?: string;
-      _type: "link";
+      _type: 'link';
       _key: string;
     }>;
     level?: number;
-    _type: "block";
+    _type: 'block';
     _key: string;
   }>;
   story?: Array<{
     children?: Array<{
       marks?: Array<string>;
       text?: string;
-      _type: "span";
+      _type: 'span';
       _key: string;
     }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "blockquote";
-    listItem?: "bullet" | "number";
+    style?: 'normal' | 'h1' | 'h2' | 'h3' | 'blockquote';
+    listItem?: 'bullet' | 'number';
     markDefs?: Array<{
       href?: string;
-      _type: "link";
+      _type: 'link';
       _key: string;
     }>;
     level?: number;
-    _type: "block";
+    _type: 'block';
     _key: string;
   }>;
 };
 
 export type Book = {
   _id: string;
-  _type: "book";
+  _type: 'book';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -110,15 +110,15 @@ export type Book = {
   image?: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
     };
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
-    _type: "image";
+    _type: 'image';
   };
   volumes?: Array<{
     volume_name?: string;
@@ -127,38 +127,38 @@ export type Book = {
       children?: Array<{
         marks?: Array<string>;
         text?: string;
-        _type: "span";
+        _type: 'span';
         _key: string;
       }>;
-      style?: "normal" | "h1" | "h2" | "h3" | "blockquote";
-      listItem?: "bullet" | "number";
+      style?: 'normal' | 'h1' | 'h2' | 'h3' | 'blockquote';
+      listItem?: 'bullet' | 'number';
       markDefs?: Array<{
         href?: string;
-        _type: "link";
+        _type: 'link';
         _key: string;
       }>;
       level?: number;
-      _type: "block";
+      _type: 'block';
       _key: string;
     }>;
     audio?: {
       asset?: {
         _ref: string;
-        _type: "reference";
+        _type: 'reference';
         _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+        [internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
       };
       media?: unknown;
-      _type: "file";
+      _type: 'file';
     };
-    _type: "volume";
+    _type: 'volume';
     _key: string;
   }>;
 };
 
 export type Artifact = {
   _id: string;
-  _type: "artifact";
+  _type: 'artifact';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -173,32 +173,32 @@ export type Artifact = {
       children?: Array<{
         marks?: Array<string>;
         text?: string;
-        _type: "span";
+        _type: 'span';
         _key: string;
       }>;
-      style?: "normal" | "h1" | "h2" | "h3" | "blockquote";
-      listItem?: "bullet" | "number";
+      style?: 'normal' | 'h1' | 'h2' | 'h3' | 'blockquote';
+      listItem?: 'bullet' | 'number';
       markDefs?: Array<{
         href?: string;
-        _type: "link";
+        _type: 'link';
         _key: string;
       }>;
       level?: number;
-      _type: "block";
+      _type: 'block';
       _key: string;
     }>;
     image?: {
       asset?: {
         _ref: string;
-        _type: "reference";
+        _type: 'reference';
         _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
       };
       media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;
-      _type: "image";
+      _type: 'image';
     };
   };
   sandsOfEon?: {
@@ -207,32 +207,32 @@ export type Artifact = {
       children?: Array<{
         marks?: Array<string>;
         text?: string;
-        _type: "span";
+        _type: 'span';
         _key: string;
       }>;
-      style?: "normal" | "h1" | "h2" | "h3" | "blockquote";
-      listItem?: "bullet" | "number";
+      style?: 'normal' | 'h1' | 'h2' | 'h3' | 'blockquote';
+      listItem?: 'bullet' | 'number';
       markDefs?: Array<{
         href?: string;
-        _type: "link";
+        _type: 'link';
         _key: string;
       }>;
       level?: number;
-      _type: "block";
+      _type: 'block';
       _key: string;
     }>;
     image?: {
       asset?: {
         _ref: string;
-        _type: "reference";
+        _type: 'reference';
         _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
       };
       media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;
-      _type: "image";
+      _type: 'image';
     };
   };
   plumeOfDeath?: {
@@ -241,32 +241,32 @@ export type Artifact = {
       children?: Array<{
         marks?: Array<string>;
         text?: string;
-        _type: "span";
+        _type: 'span';
         _key: string;
       }>;
-      style?: "normal" | "h1" | "h2" | "h3" | "blockquote";
-      listItem?: "bullet" | "number";
+      style?: 'normal' | 'h1' | 'h2' | 'h3' | 'blockquote';
+      listItem?: 'bullet' | 'number';
       markDefs?: Array<{
         href?: string;
-        _type: "link";
+        _type: 'link';
         _key: string;
       }>;
       level?: number;
-      _type: "block";
+      _type: 'block';
       _key: string;
     }>;
     image?: {
       asset?: {
         _ref: string;
-        _type: "reference";
+        _type: 'reference';
         _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
       };
       media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;
-      _type: "image";
+      _type: 'image';
     };
   };
   circletOfLogos?: {
@@ -275,32 +275,32 @@ export type Artifact = {
       children?: Array<{
         marks?: Array<string>;
         text?: string;
-        _type: "span";
+        _type: 'span';
         _key: string;
       }>;
-      style?: "normal" | "h1" | "h2" | "h3" | "blockquote";
-      listItem?: "bullet" | "number";
+      style?: 'normal' | 'h1' | 'h2' | 'h3' | 'blockquote';
+      listItem?: 'bullet' | 'number';
       markDefs?: Array<{
         href?: string;
-        _type: "link";
+        _type: 'link';
         _key: string;
       }>;
       level?: number;
-      _type: "block";
+      _type: 'block';
       _key: string;
     }>;
     image?: {
       asset?: {
         _ref: string;
-        _type: "reference";
+        _type: 'reference';
         _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
       };
       media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;
-      _type: "image";
+      _type: 'image';
     };
   };
   gobletOfEonothem?: {
@@ -309,39 +309,39 @@ export type Artifact = {
       children?: Array<{
         marks?: Array<string>;
         text?: string;
-        _type: "span";
+        _type: 'span';
         _key: string;
       }>;
-      style?: "normal" | "h1" | "h2" | "h3" | "blockquote";
-      listItem?: "bullet" | "number";
+      style?: 'normal' | 'h1' | 'h2' | 'h3' | 'blockquote';
+      listItem?: 'bullet' | 'number';
       markDefs?: Array<{
         href?: string;
-        _type: "link";
+        _type: 'link';
         _key: string;
       }>;
       level?: number;
-      _type: "block";
+      _type: 'block';
       _key: string;
     }>;
     image?: {
       asset?: {
         _ref: string;
-        _type: "reference";
+        _type: 'reference';
         _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
       };
       media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;
-      _type: "image";
+      _type: 'image';
     };
   };
 };
 
 export type Character = {
   _id: string;
-  _type: "character";
+  _type: 'character';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -351,42 +351,42 @@ export type Character = {
   image?: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
     };
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
-    _type: "image";
+    _type: 'image';
   };
   splash?: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
     };
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
-    _type: "image";
+    _type: 'image';
   };
   title?: string;
   rarity?: number;
   weapon?: {
     _ref: string;
-    _type: "reference";
+    _type: 'reference';
     _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "weaponType";
+    [internalGroqTypeReferenceTo]?: 'weaponType';
   };
   element?: {
     _ref: string;
-    _type: "reference";
+    _type: 'reference';
     _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "elements";
+    [internalGroqTypeReferenceTo]?: 'elements';
   };
   birthday?: string;
   constellation?: string;
@@ -395,50 +395,50 @@ export type Character = {
   affiliation?: string;
   vision?: {
     _ref: string;
-    _type: "reference";
+    _type: 'reference';
     _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "elements";
+    [internalGroqTypeReferenceTo]?: 'elements';
   };
   gnosis?: {
     _ref: string;
-    _type: "reference";
+    _type: 'reference';
     _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "elements";
+    [internalGroqTypeReferenceTo]?: 'elements';
   };
   authority?: {
     _ref: string;
-    _type: "reference";
+    _type: 'reference';
     _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "elements";
+    [internalGroqTypeReferenceTo]?: 'elements';
   };
   character_details?: {
     content?: Array<{
       children?: Array<{
         marks?: Array<string>;
         text?: string;
-        _type: "span";
+        _type: 'span';
         _key: string;
       }>;
-      style?: "normal" | "h1" | "h2" | "h3" | "blockquote";
-      listItem?: "bullet" | "number";
+      style?: 'normal' | 'h1' | 'h2' | 'h3' | 'blockquote';
+      listItem?: 'bullet' | 'number';
       markDefs?: Array<{
         href?: string;
-        _type: "link";
+        _type: 'link';
         _key: string;
       }>;
       level?: number;
-      _type: "block";
+      _type: 'block';
       _key: string;
     }>;
     audio?: {
       asset?: {
         _ref: string;
-        _type: "reference";
+        _type: 'reference';
         _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+        [internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
       };
       media?: unknown;
-      _type: "file";
+      _type: 'file';
     };
   };
   character_story_1?: {
@@ -447,29 +447,29 @@ export type Character = {
       children?: Array<{
         marks?: Array<string>;
         text?: string;
-        _type: "span";
+        _type: 'span';
         _key: string;
       }>;
-      style?: "normal" | "h1" | "h2" | "h3" | "blockquote";
-      listItem?: "bullet" | "number";
+      style?: 'normal' | 'h1' | 'h2' | 'h3' | 'blockquote';
+      listItem?: 'bullet' | 'number';
       markDefs?: Array<{
         href?: string;
-        _type: "link";
+        _type: 'link';
         _key: string;
       }>;
       level?: number;
-      _type: "block";
+      _type: 'block';
       _key: string;
     }>;
     audio?: {
       asset?: {
         _ref: string;
-        _type: "reference";
+        _type: 'reference';
         _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+        [internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
       };
       media?: unknown;
-      _type: "file";
+      _type: 'file';
     };
   };
   character_story_2?: {
@@ -478,29 +478,29 @@ export type Character = {
       children?: Array<{
         marks?: Array<string>;
         text?: string;
-        _type: "span";
+        _type: 'span';
         _key: string;
       }>;
-      style?: "normal" | "h1" | "h2" | "h3" | "blockquote";
-      listItem?: "bullet" | "number";
+      style?: 'normal' | 'h1' | 'h2' | 'h3' | 'blockquote';
+      listItem?: 'bullet' | 'number';
       markDefs?: Array<{
         href?: string;
-        _type: "link";
+        _type: 'link';
         _key: string;
       }>;
       level?: number;
-      _type: "block";
+      _type: 'block';
       _key: string;
     }>;
     audio?: {
       asset?: {
         _ref: string;
-        _type: "reference";
+        _type: 'reference';
         _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+        [internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
       };
       media?: unknown;
-      _type: "file";
+      _type: 'file';
     };
   };
   character_story_3?: {
@@ -509,29 +509,29 @@ export type Character = {
       children?: Array<{
         marks?: Array<string>;
         text?: string;
-        _type: "span";
+        _type: 'span';
         _key: string;
       }>;
-      style?: "normal" | "h1" | "h2" | "h3" | "blockquote";
-      listItem?: "bullet" | "number";
+      style?: 'normal' | 'h1' | 'h2' | 'h3' | 'blockquote';
+      listItem?: 'bullet' | 'number';
       markDefs?: Array<{
         href?: string;
-        _type: "link";
+        _type: 'link';
         _key: string;
       }>;
       level?: number;
-      _type: "block";
+      _type: 'block';
       _key: string;
     }>;
     audio?: {
       asset?: {
         _ref: string;
-        _type: "reference";
+        _type: 'reference';
         _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+        [internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
       };
       media?: unknown;
-      _type: "file";
+      _type: 'file';
     };
   };
   character_story_4?: {
@@ -540,29 +540,29 @@ export type Character = {
       children?: Array<{
         marks?: Array<string>;
         text?: string;
-        _type: "span";
+        _type: 'span';
         _key: string;
       }>;
-      style?: "normal" | "h1" | "h2" | "h3" | "blockquote";
-      listItem?: "bullet" | "number";
+      style?: 'normal' | 'h1' | 'h2' | 'h3' | 'blockquote';
+      listItem?: 'bullet' | 'number';
       markDefs?: Array<{
         href?: string;
-        _type: "link";
+        _type: 'link';
         _key: string;
       }>;
       level?: number;
-      _type: "block";
+      _type: 'block';
       _key: string;
     }>;
     audio?: {
       asset?: {
         _ref: string;
-        _type: "reference";
+        _type: 'reference';
         _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+        [internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
       };
       media?: unknown;
-      _type: "file";
+      _type: 'file';
     };
   };
   character_story_5?: {
@@ -571,29 +571,29 @@ export type Character = {
       children?: Array<{
         marks?: Array<string>;
         text?: string;
-        _type: "span";
+        _type: 'span';
         _key: string;
       }>;
-      style?: "normal" | "h1" | "h2" | "h3" | "blockquote";
-      listItem?: "bullet" | "number";
+      style?: 'normal' | 'h1' | 'h2' | 'h3' | 'blockquote';
+      listItem?: 'bullet' | 'number';
       markDefs?: Array<{
         href?: string;
-        _type: "link";
+        _type: 'link';
         _key: string;
       }>;
       level?: number;
-      _type: "block";
+      _type: 'block';
       _key: string;
     }>;
     audio?: {
       asset?: {
         _ref: string;
-        _type: "reference";
+        _type: 'reference';
         _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+        [internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
       };
       media?: unknown;
-      _type: "file";
+      _type: 'file';
     };
   };
   extra_story?: {
@@ -601,29 +601,29 @@ export type Character = {
       children?: Array<{
         marks?: Array<string>;
         text?: string;
-        _type: "span";
+        _type: 'span';
         _key: string;
       }>;
-      style?: "normal" | "h1" | "h2" | "h3" | "blockquote";
-      listItem?: "bullet" | "number";
+      style?: 'normal' | 'h1' | 'h2' | 'h3' | 'blockquote';
+      listItem?: 'bullet' | 'number';
       markDefs?: Array<{
         href?: string;
-        _type: "link";
+        _type: 'link';
         _key: string;
       }>;
       level?: number;
-      _type: "block";
+      _type: 'block';
       _key: string;
     }>;
     audio?: {
       asset?: {
         _ref: string;
-        _type: "reference";
+        _type: 'reference';
         _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+        [internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
       };
       media?: unknown;
-      _type: "file";
+      _type: 'file';
     };
   };
   vision_story?: {
@@ -631,36 +631,36 @@ export type Character = {
       children?: Array<{
         marks?: Array<string>;
         text?: string;
-        _type: "span";
+        _type: 'span';
         _key: string;
       }>;
-      style?: "normal" | "h1" | "h2" | "h3" | "blockquote";
-      listItem?: "bullet" | "number";
+      style?: 'normal' | 'h1' | 'h2' | 'h3' | 'blockquote';
+      listItem?: 'bullet' | 'number';
       markDefs?: Array<{
         href?: string;
-        _type: "link";
+        _type: 'link';
         _key: string;
       }>;
       level?: number;
-      _type: "block";
+      _type: 'block';
       _key: string;
     }>;
     audio?: {
       asset?: {
         _ref: string;
-        _type: "reference";
+        _type: 'reference';
         _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+        [internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
       };
       media?: unknown;
-      _type: "file";
+      _type: 'file';
     };
   };
 };
 
 export type WeaponType = {
   _id: string;
-  _type: "weaponType";
+  _type: 'weaponType';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -669,21 +669,21 @@ export type WeaponType = {
   image?: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
     };
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
-    _type: "image";
+    _type: 'image';
   };
 };
 
 export type Elements = {
   _id: string;
-  _type: "elements";
+  _type: 'elements';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -692,20 +692,20 @@ export type Elements = {
   image?: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
     };
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
-    _type: "image";
+    _type: 'image';
   };
 };
 
 export type SanityImagePaletteSwatch = {
-  _type: "sanity.imagePaletteSwatch";
+  _type: 'sanity.imagePaletteSwatch';
   background?: string;
   foreground?: string;
   population?: number;
@@ -713,7 +713,7 @@ export type SanityImagePaletteSwatch = {
 };
 
 export type SanityImagePalette = {
-  _type: "sanity.imagePalette";
+  _type: 'sanity.imagePalette';
   darkMuted?: SanityImagePaletteSwatch;
   lightVibrant?: SanityImagePaletteSwatch;
   darkVibrant?: SanityImagePaletteSwatch;
@@ -724,14 +724,14 @@ export type SanityImagePalette = {
 };
 
 export type SanityImageDimensions = {
-  _type: "sanity.imageDimensions";
+  _type: 'sanity.imageDimensions';
   height?: number;
   width?: number;
   aspectRatio?: number;
 };
 
 export type SanityImageHotspot = {
-  _type: "sanity.imageHotspot";
+  _type: 'sanity.imageHotspot';
   x?: number;
   y?: number;
   height?: number;
@@ -739,7 +739,7 @@ export type SanityImageHotspot = {
 };
 
 export type SanityImageCrop = {
-  _type: "sanity.imageCrop";
+  _type: 'sanity.imageCrop';
   top?: number;
   bottom?: number;
   left?: number;
@@ -748,7 +748,7 @@ export type SanityImageCrop = {
 
 export type SanityFileAsset = {
   _id: string;
-  _type: "sanity.fileAsset";
+  _type: 'sanity.fileAsset';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -770,7 +770,7 @@ export type SanityFileAsset = {
 
 export type SanityImageAsset = {
   _id: string;
-  _type: "sanity.imageAsset";
+  _type: 'sanity.imageAsset';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -792,7 +792,7 @@ export type SanityImageAsset = {
 };
 
 export type SanityImageMetadata = {
-  _type: "sanity.imageMetadata";
+  _type: 'sanity.imageMetadata';
   location?: Geopoint;
   dimensions?: SanityImageDimensions;
   palette?: SanityImagePalette;
@@ -803,33 +803,51 @@ export type SanityImageMetadata = {
 };
 
 export type Geopoint = {
-  _type: "geopoint";
+  _type: 'geopoint';
   lat?: number;
   lng?: number;
   alt?: number;
 };
 
 export type Slug = {
-  _type: "slug";
+  _type: 'slug';
   current?: string;
   source?: string;
 };
 
 export type SanityAssetSourceData = {
-  _type: "sanity.assetSourceData";
+  _type: 'sanity.assetSourceData';
   name?: string;
   id?: string;
   url?: string;
 };
 
-export type AllSanitySchemaTypes = Version | Weapon | Book | Artifact | Character | WeaponType | Elements | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
+export type AllSanitySchemaTypes =
+  | Version
+  | Weapon
+  | Book
+  | Artifact
+  | Character
+  | WeaponType
+  | Elements
+  | SanityImagePaletteSwatch
+  | SanityImagePalette
+  | SanityImageDimensions
+  | SanityImageHotspot
+  | SanityImageCrop
+  | SanityFileAsset
+  | SanityImageAsset
+  | SanityImageMetadata
+  | Geopoint
+  | Slug
+  | SanityAssetSourceData;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/components/layout/changelog-popup.tsx
 // Variable: query
 // Query: *[_type == "version" && isPublished == true] | order(releaseDate desc)[0]
 export type QueryResult = {
   _id: string;
-  _type: "version";
+  _type: 'version';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -837,7 +855,7 @@ export type QueryResult = {
   releaseDate?: string;
   isPublished?: boolean;
   changes?: Array<{
-    type?: "breaking" | "bugfix" | "feature" | "improvement";
+    type?: 'breaking' | 'bugfix' | 'feature' | 'improvement';
     description?: string;
     _key: string;
   }>;
@@ -848,7 +866,7 @@ export type QueryResult = {
 // Query: *[_type == "elements"] | order(name asc)
 export type GET_ALL_ELEMENTSResult = Array<{
   _id: string;
-  _type: "elements";
+  _type: 'elements';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -857,22 +875,22 @@ export type GET_ALL_ELEMENTSResult = Array<{
   image?: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
     };
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
-    _type: "image";
+    _type: 'image';
   };
 }>;
 // Variable: GET_ALL_WEAPON_TYPES
 // Query: *[_type == "weaponType"] | order(name asc)
 export type GET_ALL_WEAPON_TYPESResult = Array<{
   _id: string;
-  _type: "weaponType";
+  _type: 'weaponType';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -881,50 +899,50 @@ export type GET_ALL_WEAPON_TYPESResult = Array<{
   image?: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
     };
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
-    _type: "image";
+    _type: 'image';
   };
 }>;
 // Variable: GET_ALL_CHARACTERS
 // Query: *[_type == "character"] | order(name asc) {    _id,    _type,    id,    name,    description,    image,    splash,    title,    rarity,    birthday,    constellation,    region,    special_dish,    affiliation,    "weapon": weapon->{_id, name, description, image},    "element": element->{_id, name, description, image},    "vision": vision->{_id, name, description, image},    "gnosis": gnosis->{_id, name, description, image},    "authority": authority->{_id, name, description, image}  }
 export type GET_ALL_CHARACTERSResult = Array<{
   _id: string;
-  _type: "character";
+  _type: 'character';
   id: string | null;
   name: string | null;
   description: string | null;
   image: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
     };
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
-    _type: "image";
+    _type: 'image';
   } | null;
   splash: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
     };
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
-    _type: "image";
+    _type: 'image';
   } | null;
   title: string | null;
   rarity: number | null;
@@ -940,15 +958,15 @@ export type GET_ALL_CHARACTERSResult = Array<{
     image: {
       asset?: {
         _ref: string;
-        _type: "reference";
+        _type: 'reference';
         _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
       };
       media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;
-      _type: "image";
+      _type: 'image';
     } | null;
   } | null;
   element: {
@@ -958,15 +976,15 @@ export type GET_ALL_CHARACTERSResult = Array<{
     image: {
       asset?: {
         _ref: string;
-        _type: "reference";
+        _type: 'reference';
         _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
       };
       media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;
-      _type: "image";
+      _type: 'image';
     } | null;
   } | null;
   vision: {
@@ -976,15 +994,15 @@ export type GET_ALL_CHARACTERSResult = Array<{
     image: {
       asset?: {
         _ref: string;
-        _type: "reference";
+        _type: 'reference';
         _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
       };
       media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;
-      _type: "image";
+      _type: 'image';
     } | null;
   } | null;
   gnosis: {
@@ -994,15 +1012,15 @@ export type GET_ALL_CHARACTERSResult = Array<{
     image: {
       asset?: {
         _ref: string;
-        _type: "reference";
+        _type: 'reference';
         _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
       };
       media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;
-      _type: "image";
+      _type: 'image';
     } | null;
   } | null;
   authority: {
@@ -1012,26 +1030,26 @@ export type GET_ALL_CHARACTERSResult = Array<{
     image: {
       asset?: {
         _ref: string;
-        _type: "reference";
+        _type: 'reference';
         _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
       };
       media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;
-      _type: "image";
+      _type: 'image';
     } | null;
   } | null;
 }>;
 
 // Query TypeMap
-import "@sanity/client";
-declare module "@sanity/client" {
+import '@sanity/client';
+declare module '@sanity/client' {
   interface SanityQueries {
-    "*[_type == \"version\" && isPublished == true] | order(releaseDate desc)[0]": QueryResult;
-    "*[_type == \"elements\"] | order(name asc)": GET_ALL_ELEMENTSResult;
-    "*[_type == \"weaponType\"] | order(name asc)": GET_ALL_WEAPON_TYPESResult;
-    "*[_type == \"character\"] | order(name asc) {\n    _id,\n    _type,\n    id,\n    name,\n    description,\n    image,\n    splash,\n    title,\n    rarity,\n    birthday,\n    constellation,\n    region,\n    special_dish,\n    affiliation,\n    \"weapon\": weapon->{_id, name, description, image},\n    \"element\": element->{_id, name, description, image},\n    \"vision\": vision->{_id, name, description, image},\n    \"gnosis\": gnosis->{_id, name, description, image},\n    \"authority\": authority->{_id, name, description, image}\n  }": GET_ALL_CHARACTERSResult;
+    '*[_type == "version" && isPublished == true] | order(releaseDate desc)[0]': QueryResult;
+    '*[_type == "elements"] | order(name asc)': GET_ALL_ELEMENTSResult;
+    '*[_type == "weaponType"] | order(name asc)': GET_ALL_WEAPON_TYPESResult;
+    '*[_type == "character"] | order(name asc) {\n    _id,\n    _type,\n    id,\n    name,\n    description,\n    image,\n    splash,\n    title,\n    rarity,\n    birthday,\n    constellation,\n    region,\n    special_dish,\n    affiliation,\n    "weapon": weapon->{_id, name, description, image},\n    "element": element->{_id, name, description, image},\n    "vision": vision->{_id, name, description, image},\n    "gnosis": gnosis->{_id, name, description, image},\n    "authority": authority->{_id, name, description, image}\n  }': GET_ALL_CHARACTERSResult;
   }
 }

@@ -71,19 +71,19 @@ export default function CharacterDetailPage() {
                   <div className='flex flex-wrap gap-2 mt-2'>
                     <span
                       className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                        character.element === 'pyro' ?
-                          'bg-red-500/20 text-red-500'
-                        : character.element === 'hydro' ?
-                          'bg-blue-500/20 text-blue-500'
-                        : character.element === 'anemo' ?
-                          'bg-emerald-500/20 text-emerald-500'
-                        : character.element === 'electro' ?
-                          'bg-purple-500/20 text-purple-500'
-                        : character.element === 'dendro' ?
-                          'bg-green-500/20 text-green-500'
-                        : character.element === 'cryo' ?
-                          'bg-cyan-500/20 text-cyan-500'
-                        : 'bg-amber-500/20 text-amber-500'
+                        character.element === 'pyro'
+                          ? 'bg-red-500/20 text-red-500'
+                          : character.element === 'hydro'
+                            ? 'bg-blue-500/20 text-blue-500'
+                            : character.element === 'anemo'
+                              ? 'bg-emerald-500/20 text-emerald-500'
+                              : character.element === 'electro'
+                                ? 'bg-purple-500/20 text-purple-500'
+                                : character.element === 'dendro'
+                                  ? 'bg-green-500/20 text-green-500'
+                                  : character.element === 'cryo'
+                                    ? 'bg-cyan-500/20 text-cyan-500'
+                                    : 'bg-amber-500/20 text-amber-500'
                       }`}
                     >
                       {character.element.charAt(0).toUpperCase() +
@@ -168,7 +168,7 @@ export default function CharacterDetailPage() {
               <TabsContent value='stories' className='space-y-6'>
                 <div className='bg-card border rounded-lg'>
                   <Accordion type='single' collapsible className='w-full'>
-                    {stories.length > 0 ?
+                    {stories.length > 0 ? (
                       stories.map((story) => (
                         <AccordionItem key={story.id} value={story.id}>
                           <AccordionTrigger className='px-4'>
@@ -182,10 +182,11 @@ export default function CharacterDetailPage() {
                           </AccordionContent>
                         </AccordionItem>
                       ))
-                    : <div className='p-4 text-muted-foreground text-center'>
+                    ) : (
+                      <div className='p-4 text-muted-foreground text-center'>
                         No character stories available yet.
                       </div>
-                    }
+                    )}
                   </Accordion>
                 </div>
               </TabsContent>

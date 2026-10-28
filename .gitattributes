@@ -1,0 +1,11 @@
+# Normalise line endings so Prettier's `endOfLine: lf` holds on every OS.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.ttf binary
+*.woff binary
+*.woff2 binary

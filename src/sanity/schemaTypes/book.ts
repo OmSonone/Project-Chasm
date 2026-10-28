@@ -1,14 +1,14 @@
-import { defineField, defineType } from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 const audioField = {
   name: 'audio',
   title: 'Audio Narration',
   type: 'file',
   options: {
-    accept: 'audio/*'
+    accept: 'audio/*',
   },
-  description: 'Upload an audio file for narration'
-}
+  description: 'Upload an audio file for narration',
+};
 
 export const book = defineType({
   name: 'book',
@@ -96,11 +96,11 @@ export const book = defineType({
               ],
               validation: (Rule) => Rule.required(),
             },
-            audioField
+            audioField,
           ],
         },
       ],
       validation: (Rule) => Rule.required().min(1),
     }),
   ],
-})
+});

@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 export const version = defineType({
   name: 'version',
@@ -68,7 +68,7 @@ export const version = defineType({
       return {
         title: `Version ${title}`,
         subtitle: new Date(subtitle).toLocaleDateString(),
-      }
+      };
     },
   },
-}) 
+});

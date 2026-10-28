@@ -42,10 +42,7 @@ const BookDetails = (book: Book) => {
         </p>
         <div className='flex justify-between gap-2 mt-4'>
           <AudiobookModal />
-          <Link
-            className='flex-1'
-            href={`/home/books/${book.id}`}
-          >
+          <Link className='flex-1' href={`/home/books/${book.id}`}>
             <Button
               variant='outline'
               className='w-full bg-black hover:bg-black/80 dark:bg-white dark:hover:bg-white/80 text-white hover:text-white dark:hover:text-black dark:text-black cursor-pointer'

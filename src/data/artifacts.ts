@@ -1,4 +1,4 @@
-import { Artifact } from '@/components/item-artifact/artifact-card';
+import { type Artifact } from '@/components/item-artifact/artifact-card';
 
 export const artifactSets = [
   {

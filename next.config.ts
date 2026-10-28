@@ -1,34 +1,28 @@
-import type { NextConfig } from 'next'
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-    /* config options here */
-    images: {
-        dangerouslyAllowSVG: true,
-        remotePatterns: [
-            {
-                protocol: 'https',
-                hostname: 'cdn.sanity.io',
-            },
-        ],
-    },
-    typescript: {
-        ignoreBuildErrors: true,
-    },
-    eslint: {
-        ignoreDuringBuilds: true,
-    },
+  poweredByHeader: false,
+  images: {
+    dangerouslyAllowSVG: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+      },
+    ],
+  },
 
-    /**Uncomment this whenever you want to enable maintainance mode **/
+  /** Uncomment this whenever you want to enable maintenance mode **/
 
-    // async redirects() {
-    //     return [
-    //       {
-    //         source: '/((?!maintenance).*)',
-    //         destination: '/maintenance',
-    //         permanent: false
-    //       }
-    //     ]
-    // }
-}
+  // async redirects() {
+  //     return [
+  //       {
+  //         source: '/((?!maintenance).*)',
+  //         destination: '/maintenance',
+  //         permanent: false
+  //       }
+  //     ]
+  // }
+};
 
-export default nextConfig
+export default nextConfig;

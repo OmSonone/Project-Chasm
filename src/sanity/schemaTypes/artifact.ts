@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 const artifactPieceFields = [
   defineField({
@@ -51,7 +51,7 @@ const artifactPieceFields = [
     ],
     validation: (Rule) => Rule.required(),
   }),
-]
+];
 
 export const artifact = defineType({
   name: 'artifact',
@@ -74,7 +74,7 @@ export const artifact = defineType({
       title: 'Name',
       type: 'string',
       validation: (Rule) => Rule.required(),
-    } ),
+    }),
     defineField({
       name: 'rarity',
       title: 'Rarity',
@@ -124,4 +124,4 @@ export const artifact = defineType({
       fields: artifactPieceFields,
     }),
   ],
-})
+});

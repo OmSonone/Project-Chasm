@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 export const weapon = defineType({
   name: 'weapon',
@@ -131,4 +131,4 @@ export const weapon = defineType({
       media: 'image',
     },
   },
-})
+});

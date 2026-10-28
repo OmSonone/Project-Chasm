@@ -1,4 +1,4 @@
-import { Item } from '@/components/item-artifact/item-card';
+import { type Item } from '@/components/item-artifact/item-card';
 
 export const items: Item[] = [
   {
